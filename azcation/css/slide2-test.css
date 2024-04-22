@@ -1,0 +1,93 @@
+@media screen and (max-width:767px){
+    /*BASIC STYLE*/
+    *{margin:0; padding:0;}
+    ol, ul, dl{list-style:none;}
+    a{text-decoration:none;}
+    img{vertical-align:top; text-align:left; border:0; margin:0; padding:0;}
+    #skip, .skip{font-size:0; width:0; height:0; line-height:0; position:absolute; left:-9999px;}
+    body,html{font-family:'SCDream5';}
+    input[type="radio"]{display:none;}
+    
+   /*LAYOUT STYLE*/
+   #wrap{
+    min-width:100%;
+    margin:0 auto;
+    }
+ 
+     /*sub1MainEvent STYLE*/
+     #sub1MainEvent{
+         width: 100%;
+         background: url(../images/bg_sub2_event2.png)no-repeat 56% 0;
+         background-size: cover;
+         padding:50% 0;
+         overflow: hidden;
+     }
+     #sub1MainEvent:after{
+         content:'';
+         display:block;
+         clear:both;
+     }
+ 
+     /*sub1Content1 STYLE*/
+     #sub1Content1{
+         background: #fff url(../images/arrowbackground.png)no-repeat 0 bottom;
+         background-size: 47%;
+         width: 100%;
+         overflow: hidden;
+     }
+     .content1-wrapper{
+         width: 100%;
+         overflow: hidden;
+         margin: 19% auto;
+         margin-bottom: 10%;
+         position:relative;
+     }
+     .content1-wrapper>h2:first-child{display:none;}
+     .content1-wrapper>h2{
+         text-align: center;
+         font: 7vw 'Recipekorea';
+         padding-bottom: 7%;
+         width: 72%;
+         margin: 0 auto;
+         line-height: 150%;
+     }
+     .content1-list{
+         overflow: hidden;
+         width: 85%;
+         margin: 0 auto;
+         position:relative;
+         padding:42% 0;
+     }
+     .content1-list>li{
+         width: 98%;
+         margin:0 1%;
+         background: radial-gradient(ellipse at 25% 25%, #43bbc2 0%,#4499d8 100%);
+         box-shadow: 2px 2px 4px #bdbdbd;
+         border-radius: 15px;
+         color: #fff;
+         box-sizing: border-box;
+         padding: 10% 0%;
+         position:absolute;
+         top:0;
+     }
+     .content1-list>li:first-child{left:0%;}
+     .content1-list>li:nth-child(2){left:100%;}
+     .content1-list>li:nth-child(3){left:200%;}
+     .content1-list>li:nth-child(4){left:300%;}
+     .content1-list>li:nth-child(5){left:400%;}
+     .content1-list>li:last-child{left:500%;}
+ 
+     .content1-list>li>p{
+         font-family:'Recipekorea';
+         text-align:center;
+     }
+     .content1-list>li>p:nth-child(odd){
+         font-size: 4.5vw;
+         margin: 10% 0 8% 0;
+     }
+     .content1-list>li>p:nth-child(2){font-size: 9vw;}
+     .content1-list>li>p:last-child{font-family:'SCDream3';}
+ 
+ }
+ 
+ 
