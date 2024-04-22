@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/sub1.css">
+    <title>영어를 재밌게! 재미있는 영어 AZcation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.easing.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //////topevent toggle//////////////
+            $('.close').click(function(){
+                $(this).hide();
+                $(this).parent().slideUp();
+            });
+             /////////nav toggle SCRIPT/////////
+            var navToggle=$('.allmenu_view');
+            var navAll=$('#allMenu_box');
+            
+            navToggle.click(function(){
+                navAll.slideToggle(600);
+            });
+
+            //////topevent toggle//////////////
+                $('.close2').click(function(){
+                $(this).hide();
+                $(this).parent().hide();
+            });
+            
+            ////////content1 slide//////////////
+            var button=$('.slideButton-list>li');
+            var visual=$('.mobile-content1-list>li');
+            var current=0;
+            var setIntervalId;
+            button.click(function(){
+                        var tg=$(this);
+                        var i=tg.index();
+                        button.removeClass('on');
+                        tg.addClass('on');
+                        move(i);
+                    });
+
+            $('.content1-wrapper').on({
+                mouseover:function(){
+                    clearInterval(setIntervalId);
+                },mouseout:function(){
+                    timer();
+                }
+            });
+            function timer(){
+                setIntervalId=setInterval(function(){
+                    var n=current+1;
+                    if(n==visual.size()){n=0;}
+                    button.eq(n).trigger('click');
+                    },2500);
+                }
+            timer();
+
+            function move(i){
+                var currentE1=visual.eq(current);
+                var nextE1=visual.eq(i);
+                currentE1.css('left',0).animate({'left':'-110%'});
+                nextE1.css('left','100%').animate({'left':0});
+                current=i;
+            }            
+
+            ///////////lecture slide////////////
+            var b=$('.slide_b>li');
+            var div=$('.tablet-lecture-list');
+            var list_a = div.children('div');
+            var bb_btn=$('.slideArrow-next');
+            var cc_btn=$('.slideArrow-prev');
+            var mm_num=0;
+
+            b.each(function(){
+                $(this).click(function(){
+                    var strName=$(this).index();
+                    slideTarget(strName);
+                });
+                function slideTarget(n){
+                    var pos=Number(n)*-100;
+                    div.stop().animate({'left':pos+'%'},1000);
+                }
+            });
+
+            bb_btn.click(function(){
+                if(mm_num>=list_a.length-3)return;
+                mm_num++;
+                div.stop().animate({'marginLeft':-100*mm_num+'%'});
+            });
+
+            cc_btn.click(function(){
+                if(mm_num<=0)return;
+                mm_num--;
+                div.stop().animate({'marginLeft':-100*mm_num+'%'});
+            });
+
+////////////////////////////MOBILE SCRIPT////////////////////////////////////////////
+            ///////allMenu-toggle SCRIPT///////
+            $('.allMenu-toggle').click(function(){
+                $('#mobile_allMenu_box').animate({'left':'0'},800);
+            });
+            $('.mobile_allMenu_box-toggle').click(function(){
+                $('#mobile_allMenu_box').animate({'left':'-100%'},800);
+            });
+            var all=$('.mobile_allMenu_box_list>li>a');
+            var allList=$('.mobile_allMenu_box_list>li>ul');
+            all.each(function(){
+                $(this).click(function(){
+                    $(this).next().slideToggle(200).parent()
+                    .siblings().children('ul:visible').slideUp();
+                });
+            });
+
+            ////////touchNavSlide SCRIPT///////////
+            var swiper = new Swiper('.snbSwiper', {
+                slidesPerView: 'auto',
+                preventClicks: true,
+                preventClicksPropagation: false,
+                observer: true,
+                observeParents: true
+            });
+            var $snbSwiperItem = $('.snbSwiper .swiper-wrapper .swiper-slide a');
+            $snbSwiperItem.click(function(){
+                var target = $(this).parent();
+                $snbSwiperItem.parent().removeClass('on')
+                target.addClass('on');
+                muCenter(target);
+            })
+
+            function muCenter(target){
+                var snbwrap = $('.snbSwiper .swiper-wrapper');
+                var targetPos = target.position();
+                var box = $('.snbSwiper');
+                var boxHarf = box.width()/2;
+                var pos;
+                var listWidth=0;
+            
+                snbwrap.find('.swiper-slide').each(function(){
+                    listWidth += $(this).outerWidth();
+                })
+            
+                var selectTargetPos = targetPos.left + target.outerWidth()/2;
+                if (selectTargetPos <= boxHarf) { // left
+                    pos = 0;
+                }else if ((listWidth - selectTargetPos) <= boxHarf) { //right
+                    pos = listWidth-box.width();
+                }else {
+                    pos = selectTargetPos - boxHarf;
+                }
+            
+                setTimeout(function(){snbwrap.css({
+                    "transform": "translate3d("+ (pos*-1) +"px, 0, 0)",
+                    "transition-duration": "500ms"
+                })}, 200);
+            }
+
+            //////mobile-lecture-slide//////////
+            $(".mobile-arrow-next").on("click",function(){
+                    $(".mobile-lecture-list>div").each(function(){
+                        console.log($('.mobile-lecture-list-four').position().left);
+                        if($('.mobile-lecture-list-four').position().left<=0) {
+                            $(this).stop().animate({left:'+=300%'},700);
+                            }else{$(this).stop().animate({left:"-=100%"},600);}
+                        });
+                    });
+                $('.mobile-arrow-prev').on('click',function(){
+                    $('.mobile-lecture-list>div').each(function(){
+                        console.log($(this).position().left);
+                        if($('.mobile-lecture-list-one').position().left>=0){
+                            $(this).stop().animate({left:'-=300%'},700);
+                            }else{$(this).stop().animate({left:'+=100%'},600);}
+                        });
+                    });
+
+            ////////level lecture script////////
+            
+            var parentContainer = $('.mobile-content2-table');
+            var childElement = $('.mobile-content2-table-wrap');
+
+            var startX;
+            var startScrollLeft;
+            var isSwiping = false;
+
+            childElement.on('touchstart', function(event) {
+            startX = event.originalEvent.touches[0].clientX;
+            startScrollLeft = parentContainer.scrollLeft();
+            isSwiping = true;
+            });
+
+            childElement.on('touchmove', function(event) {
+            if (!isSwiping) return;
+
+            event.preventDefault();
+
+            var currentX = event.originalEvent.touches[0].clientX;
+            var distanceX = startX - currentX;
+            parentContainer.scrollLeft(startScrollLeft + distanceX);
+            });
+            
+            childElement.on('touchend', function(event) {
+            isSwiping = false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="mainHeader">
+            <div class="topEvent">
+                <span>5월 신규반 OPEN!</span>
+                <span>가정의달 이벤트 놓치지 마세요!</span>
+                <div class="close"></div>
+            </div>
+            <!--topEvent end-->
+
+            <div class="middleHeader">
+                <div class="logo">
+                    <a href="main.html">
+                        <img src="icon/logo.png" alt="로고">
+                    </a>
+                </div>
+
+                <div class="mainSearch">
+                    <form method="post" id="sform" name="sform">
+                        <fieldset>
+                            <legend class="skip">애즈케이션 강의검색</legend>
+                            <label for="sbox" class="skip">영어 강의 검색어 입력</label>
+                            <input type="search" id="sbox" placeholder="찾고계신 강의를 검색해 보세요">
+                            <input type="image" src="icon/search.svg" width="38" height="31" alt="검색">
+                        </fieldset>
+                    </form>
+                    <ul class="searchList">
+                        <li><a href="#">#왕초보영어</a></li>
+                        <li><a href="#">#현지회화</a></li>
+                        <li><a href="#">#만화로학습</a></li>
+                        <li><a href="#">#문법</a></li>
+                        <li><a href="#">#패키지추천</a></li>
+                    </ul>
+                </div>
+                <!--mainSearch end-->
+                <div id="gnb-wrap">
+                    <nav id="gnb">
+                        <ul>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="header-icon">
+                        <li><a href="#"><img src="icon/youtube.png" width="30" height="30" alt="유튜브"></a></li>
+                        <li><a href="#"><img src="icon/instargram.png" width="30" height="30" alt="인스타그램"></a></li>
+                        <li><a href="#"><img src="icon/facebook.png" width="30" height="30" alt="페이스북"></a></li>
+                        <li><a href="#"><img src="icon/blog.png" width="30" height="30" alt="블로그"></a></li>
+                    </ul>
+                </div>
+                <!--gnb-wrap end-->
+            </div>
+            <!--middleHeader end-->
+            <div class="allMenu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="mobile_allMenu_box">
+                <div class="mobile_allMenu_box-toggle">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="mobile-icon">
+                    <h2><a href="#"><img src="icon/logo2.png" alt="logo"></a></h2>
+                </div>
+                <ul>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+                <ul class="mobile_allMenu_box_list">
+                    <li>
+                        <a href="#">전체강의</a>
+                        <ul class="mobile_allMenu_sub mobile_allClass_sub">
+                            <li>
+                                <a href="#">단과</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">레벨별</a>
+                                        <ul>
+                                            <li><a href="#">왕초보</a></li>
+                                            <li><a href="#">초중급</a></li>
+                                            <li><a href="#">중급이상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">학습영역별</a>
+                                        <ul>
+                                            <li><a href="#">회화</a></li>
+                                            <li><a href="#">어휘표현</a></li>
+                                            <li><a href="#">문법</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">패키지</a>
+                                <ul>
+                                    <li><a href="#">어학원 패키지</a></li>
+                                    <li><a href="#">100% 환급 패키지</a></li>
+                                    <li><a href="#">평생수강 패키지</a></li>
+                                    <li><a href="#">100일의 기적 패키지</a></li>
+                                    <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                </ul>
+                            </li>
+                            <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">학습지원센터</a>
+                        <ul class="mobile_allMenu_sub">
+                            <li><a href="#">공부 질문하기</a></li>
+                            <li><a href="#">자료실</a></li>
+                            <li><a href="#">우수회원 인터뷰</a></li>
+                            <li><a href="#">학습랭킹</a></li>                                  
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">이벤트</a>
+                        <ul class="mobile_allMenu_sub">
+                            <li><a href="sub2.html">아이패드 이벤트</a></li>
+                            <li><a href="#">당첨자 발표</a></li>                               
+                        </ul>
+                    </li>
+
+                    <li><a href="#">레벨테스트</a></li>
+                    <li><a href="#">챌린지NOW</a></li>
+                    <li><a href="#">솔직후기</a></li>
+                </ul>
+            </nav>
+            <!--mobile_allMenu_box end-->
+
+            <nav id="lnb">
+                <div class="lnb-wrap">
+                    <div class="allmenu_view">
+                        <a href="#"></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">전체강의</a>
+                            <ul class="subOne">
+                                <li>
+                                    <a href="#">단과</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">레벨별</a>
+                                            <ul>
+                                                <li><a href="#">왕초보</a></li>
+                                                <li><a href="#">초중급</a></li>
+                                                <li><a href="#">중급이상</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">학습영역별</a>
+                                            <ul>
+                                                <li><a href="#">회화</a></li>
+                                                <li><a href="#">어휘표현</a></li>
+                                                <li><a href="#">문법</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">패키지</a>
+                                    <ul>
+                                        <li><a href="#">어학원 패키지</a></li>
+                                        <li><a href="#">100% 환급 패키지</a></li>
+                                        <li><a href="#">평생수강 패키지</a></li>
+                                        <li><a href="#">100일의 기적 패키지</a></li>
+                                        <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                    </ul>
+                                </li>
+                                <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">레벨테스트</a></li>
+                        <li><a href="#">솔직후기</a></li>
+                        <li><a href="#">챌린지NOW</a></li>
+                        <li>
+                            <a href="#">학습지원센터</a>
+                            <ul class="subTwo">
+                                <li><a href="#">공부 질문하기</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">우수회원 인터뷰</a></li>
+                                <li><a href="#">학습랭킹</a></li>                                  
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="subThree">
+                                <li><a href="sub2.html">아이패드 이벤트</a></li>
+                                <li><a href="#">당첨자 발표</a></li>                               
+                            </ul>
+                        </li>
+                        <li><a href="#">나의강의실</a></li>
+                    </ul>
+                </div>
+                <!--lnb-wrap end-->
+
+                <nav id="mobile-lnb">
+                    <div class="swiper-container snbSwiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href="#">전체강의</a></li>
+                            <li class="swiper-slide"><a href="#">레벨테스트</a></li>
+                            <li class="swiper-slide"><a href="#">솔직후기</a></li>
+                            <li class="swiper-slide"><a href="#">챌린지NOW</a></li>
+                            <li class="swiper-slide"><a href="#">학습지원센터</a></li>
+                            <li class="swiper-slide"><a href="sub2.html">이벤트</a></li>
+                            <li class="swiper-slide"><a href="#">나의강의실</a></li>
+                        </ul>
+                    </div>
+                    <!--swiper-container / snbSwiper end-->
+                </nav>
+                <!--mobile-lnb end-->
+
+                <nav id="allMenu_box">
+                    <ul class="allMenu_box_list">
+                        <li>
+                            <a href="#">전체강의</a>
+                            <ul class="allMenu_sub allClass_sub">
+                                <li>
+                                    <a href="#">단과</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">레벨별</a>
+                                            <ul>
+                                                <li><a href="#">왕초보</a></li>
+                                                <li><a href="#">초중급</a></li>
+                                                <li><a href="#">중급이상</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">학습영역별</a>
+                                            <ul>
+                                                <li><a href="#">회화</a></li>
+                                                <li><a href="#">어휘표현</a></li>
+                                                <li><a href="#">문법</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">패키지</a>
+                                    <ul>
+                                        <li><a href="#">어학원 패키지</a></li>
+                                        <li><a href="#">100% 환급 패키지</a></li>
+                                        <li><a href="#">평생수강 패키지</a></li>
+                                        <li><a href="#">100일의 기적 패키지</a></li>
+                                        <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                    </ul>
+                                </li>
+                                <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">학습지원센터</a>
+                            <ul class="allMenu_sub">
+                                <li><a href="#">공부 질문하기</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">우수회원 인터뷰</a></li>
+                                <li><a href="#">학습랭킹</a></li>                                  
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="allMenu_sub">
+                                <li><a href="sub2.html">아이패드 이벤트</a></li>
+                                <li><a href="#">당첨자 발표</a></li>                               
+                            </ul>
+                        </li>
+
+                        <li><a href="#">레벨테스트</a></li>
+                        <li><a href="#">챌린지NOW</a></li>
+                        <li><a href="#">솔직후기</a></li>
+                    </ul>
+                </nav>
+                <!--allMenu_box end-->
+            </nav>
+            <!--lnb end-->
+        </header>
+        <!--mainHeader end-->
+
+        <div id="sub1MainEvent">
+        </div>
+        <!--subMain1Event end-->
+
+        <div id="sub1Content1">
+            <div class="content1-wrapper">
+                <h2>애즈케이션이 다양하게 준비했습니다</h2>
+                <h2>애즈케이션이<br>다양하게 준비했습니다</h2>
+                <ul class="content1-list desktop-contetn1-list">
+                    <li>
+                        <p>시간여유가 없어도?</p>
+                        <p>YES!</p>
+                        <P>하루 고작<br><strong>10분</strong>의 투자로<br>영어를 마스터하다!</P>
+                    </li>
+
+                    <li>
+                        <p>배움이 지루하다?</p>
+                        <p>NO!</p>
+                        <P>만화, 영화 등<br>다양한 컨텐츠로<br>재미있게 배우는 영어</P>
+                    </li>
+
+                    <li>
+                        <p>주간랭킹으로 영어실력</p>
+                        <p>UP!</p>
+                        <P>매주 갱신되는<br>주간랭킹을 통해<br>영어level을 높혀보세요!</P>
+                    </li>
+
+                    <li>
+                        <p>레벨테스트도</p>
+                        <p>재미있게!</p>
+                        <P>상황극을 통한<br>레벨 테스트로 나의<br>영어실력을 확인하세요. </P>
+                    </li>
+
+                    <li>
+                        <p>1년 최대 장학금이</p>
+                        <p>395,000!</p>
+                        <P>수강이 길어질수록<br>장학금은 계속<br>적립됩니다!</P>
+                    </li>
+
+                    <li>
+                        <p>5명까지 동시수강으로</p>
+                        <p>저렴하게!</p>
+                        <P>최대 5인까지 동시수강이<br>가능해 보다 저렴하게<br>사용하실 수 있습니다.</P>
+                    </li>
+                </ul>
+
+                <ul class="content1-list mobile-content1-list">
+                    <li>
+                        <p>시간여유가 없어도?</p>
+                        <p>YES!</p>
+                        <P>하루 고작<br><strong>10분</strong>의 투자로<br>영어를 마스터하다!</P>
+                    </li>
+
+                    <li>
+                        <p>배움이 지루하다?</p>
+                        <p>NO!</p>
+                        <P>만화, 영화 등<br>다양한 컨텐츠로<br>재미있게 배우는 영어</P>
+                    </li>
+
+                    <li>
+                        <p>주간랭킹으로 영어실력</p>
+                        <p>UP!</p>
+                        <P>매주 갱신되는<br>주간랭킹을 통해<br>영어level을 높혀보세요!</P>
+                    </li>
+
+                    <li>
+                        <p>레벨테스트도</p>
+                        <p>재미있게!</p>
+                        <P>상황극을 통한<br>레벨 테스트로 나의<br>영어실력을 확인하세요. </P>
+                    </li>
+
+                    <li>
+                        <p>1년 최대 장학금이</p>
+                        <p>395,000!</p>
+                        <P>수강이 길어질수록<br>장학금은 계속<br>적립됩니다!</P>
+                    </li>
+
+                    <li>
+                        <p>5명까지 동시수강으로</p>
+                        <p>저렴하게!</p>
+                        <P>최대 5인까지 동시수강이<br>가능해 보다 저렴하게<br>사용하실 수 있습니다.</P>
+                    </li>
+                </ul>
+                <ul class="slideButton-list">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <ul class="slideArrow-list">
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <!--content1-wrapper end-->
+        </div>
+        <!--sub1Content1 end-->
+
+        <div id="sub1Content2">
+            <div class="content2-wrapper">
+                <h2>나의 레벨에 맞는 강의를 찾아보세요</h2>
+                <h2>나의 레벨에 맞는 강의를<br>찾아보세요</h2>
+                <input type="radio" name="educateRadio" id="levelTab" checked>
+                <input type="radio" name="educateRadio" id="learningTab">
+                <p class="levelTab-wrap">
+                    <label for="levelTab">레벨별</label>
+                    <label for="learningTab">학습영역별</label>
+                </p>
+                <div class="levelArea">
+                    <input type="radio" name="level" id="level1" checked>
+                    <input type="radio" name="level" id="level2">
+                    <input type="radio" name="level" id="level3">
+                    <p class="level123-wrap">
+                        <label for="level1">왕초보</label>
+                        <label for="level2">초중급</label>
+                        <label for="level3">중급이상</label>
+                    </p>
+                </div>
+                <!--levelArea end-->
+    
+                <div class="learningArea">
+                    <input type="radio" name="learning" id="learning1" checked>
+                    <input type="radio" name="learning" id="learning2">
+                    <input type="radio" name="learning" id="learning3">
+                    <p class="learning123-wrap">
+                        <label for="learning1">회화</label>
+                        <label for="learning2">어휘표현</label>
+                        <label for="learning3">문법</label>
+                    </p>
+                </div>
+                <!--learnArea end-->
+    
+                <div class="content2-table desktop-content2-table">
+                    <div class="content2-table-wrap">
+                        <p class="tr1"><span>만화로 영어배우기</span><span>비즈니스 회화 패키지</span></p>
+                        <p class="tr2"><span>기적의 영단어1</span><span>기적의 영단어2</span><span>말하기 영문법</span></p>
+                        <p class="tr3"><span>파닉스</span><span>평생수강 패키지</span></p>
+                        <p class="tr4"><span>100일의 기적 패키지</span><span>어학원 패키지</span></p>
+                        <p class="tr5"><span>영화로 영어 배우기</span><span>지영쌤의 문법 뿌수기</span></p>
+                        <p class="tr6"><span>여행 필수코스</span><span>뉘앙스 엉어 전편</span></p>
+                        <p class="tr7"><span>100% 환급 패키지</span><span>실전영어(인물/사물/동사 편)</span></p>
+                    </div>
+                </div>
+                <div class="content2-table mobile-content2-table">
+                    <div class="content2-table-wrap mobile-content2-table-wrap">
+                        <p class="tr1"><span>만화로 영어배우기</span><span>비즈니스 회화 패키지</span></p>
+                        <p class="tr2"><span>기적의 영단어1</span><span>기적의 영단어2</span><span>말하기 영문법</span></p>
+                        <p class="tr3"><span>파닉스</span><span>평생수강 패키지</span></p>
+                        <p class="tr4"><span>100일의 기적 패키지</span><span>어학원 패키지</span></p>
+                        <p class="tr5"><span>영화로 영어 배우기</span><span>지영쌤의 문법 뿌수기</span></p>
+                        <p class="tr6"><span>여행 필수코스</span><span>뉘앙스 엉어 전편</span></p>
+                        <p class="tr7"><span>100% 환급 패키지</span><span>실전영어(인물/사물/동사 편)</span></p>
+                    </div>
+                </div>
+                <div class="content2-event">
+                    <p>혹시!</p>
+                    <p>레벨테스트</p>
+                    <p>아직 안하셨나요?</p>
+                    <a href="#">레벨테스트 하러가기</a>
+                    <div class="close2"></div>
+                </div>
+            </div>
+            <!--content2-wrapper end-->
+        </div>
+        <!--sub1Content2 end-->
+
+        <div id="sub1Content3">
+            <div class="content3-wrap">
+                <h2>애즈케이션 PICK 추천강의</h2>
+                <div class="lecture-list desktop-lecture-list">
+                    <div>
+                        <p>100일의 기적 패키지</p>
+                        <p>
+                            헨리쌤과 함께라면<br>
+                            영어 실력 상승<br>
+                            어렵지 않아요!</p>
+                        <ul>
+                            <li>-100일만에 끝내는 기초영어</li>
+                            <li>-100% 환급 프로그램</li>
+                            <li>-왕초보 탈출하고싶은 분에게 추천</li>
+                            <li><span>100%환급반</span><span>베스트셀러 기초영어</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>만화로 영화배우기</p>
+                        <p>
+                            1년연속 수강률 BEST1<br>
+                            캐릭터들과 함께하는<br>
+                            재미있는 영어공부!
+                        </p>
+                        <ul>
+                            <li>-귀여운 캐릭터로 배우는 재밌는 영어!</li>
+                            <li>-반복트레이닝으로 영어를 완전히 내것으로 만들자!</li>
+                            <li>-영어를 재밌게 배우고 싶으신 분에게 추천</li>
+                            <li><span>만화로 영어공부</span><span>셀프테스트 영상제공</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>명화로 영어배우기</p>
+                        <p>
+                            은지쌤이 골라주는<br>
+                            명작영화와 함께<br>
+                            재미있는 영어공부!
+                        <ul>
+                            <li>-문법,말하기,청취 전 영역을</li>
+                            <li>-명화의 명대사로 쉽고 오래남는 영어공부!</li>
+                            <li>-문화생활과 영어공부를 같이 하고싶은 분에게 추천</li>
+                            <li><span>명화로 영어공부</span><span>오래남는 영어</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>여행 필수영어 코스</p>
+                        <p>
+                            10,000명의 현지인<br>
+                            인터뷰로 배우는<br>
+                            여행자 맞춤코스
+                        </p>
+                        <ul>
+                            <li>-여행필수문장과 발음완성을 목표로</li>
+                            <li>-쌍방향 트레이닝으로 리스닝과 스피킹을 한번에!</li>
+                            <li>-외국인 앞에서 자신감있게 말하고 싶은 분에게 추천</li>
+                            <li><span>발음규칙 완전정복</span><span>복습기간 추가제공</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lecture-list tablet-lecture-list">
+                    <div>
+                        <p>100일의 기적 패키지</p>
+                        <p>
+                            헨리쌤과 함께라면<br>
+                            영어 실력 상승<br>
+                            어렵지 않아요!</p>
+                        <ul>
+                            <li>-100일만에 끝내는 기초영어</li>
+                            <li>-100% 환급 프로그램</li>
+                            <li>-왕초보 탈출하고싶은 분에게 추천</li>
+                            <li><span>100%환급반</span><span>베스트셀러 기초영어</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>만화로 영화배우기</p>
+                        <p>
+                            1년연속 수강률 BEST1<br>
+                            캐릭터들과 함께하는<br>
+                            재미있는 영어공부!
+                        </p>
+                        <ul>
+                            <li>-귀여운 캐릭터로 배우는 재밌는 영어!</li>
+                            <li>-반복트레이닝으로 영어를 완전히 내것으로 만들자!</li>
+                            <li>-영어를 재밌게 배우고 싶으신 분에게 추천</li>
+                            <li><span>만화로 영어공부</span><span>셀프테스트 영상제공</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>명화로 영어배우기</p>
+                        <p>
+                            은지쌤이 골라주는<br>
+                            명작영화와 함께<br>
+                            재미있는 영어공부!
+                        <ul>
+                            <li>-문법,말하기,청취 전 영역을</li>
+                            <li>-명화의 명대사로 쉽고 오래남는 영어공부!</li>
+                            <li>-문화생활과 영어공부를 같이 하고싶은 분에게 추천</li>
+                            <li><span>명화로 영어공부</span><span>오래남는 영어</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>여행 필수영어 코스</p>
+                        <p>
+                            10,000명의 현지인<br>
+                            인터뷰로 배우는<br>
+                            여행자 맞춤코스
+                        </p>
+                        <ul>
+                            <li>-여행필수문장과 발음완성을 목표로</li>
+                            <li>-쌍방향 트레이닝으로 리스닝과 스피킹을 한번에!</li>
+                            <li>-외국인 앞에서 자신감있게 말하고 싶은 분에게 추천</li>
+                            <li><span>발음규칙 완전정복</span><span>복습기간 추가제공</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lecture-list mobile-lecture-list">
+                    <div class="mobile-lecture-list-one">
+                        <p>100일의 기적 패키지</p>
+                        <p>
+                            헨리쌤과 함께라면<br>
+                            영어 실력 상승<br>
+                            어렵지 않아요!</p>
+                        <ul>
+                            <li>-100일만에 끝내는 기초영어</li>
+                            <li>-100% 환급 프로그램</li>
+                            <li>-왕초보 탈출하고싶은 분에게 추천</li>
+                            <li><span>100%환급반</span><span>베스트셀러 기초영어</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>만화로 영화배우기</p>
+                        <p>
+                            1년연속 수강률 BEST1<br>
+                            캐릭터들과 함께하는<br>
+                            재미있는 영어공부!
+                        </p>
+                        <ul>
+                            <li>-귀여운 캐릭터로 배우는 재밌는 영어!</li>
+                            <li>-반복트레이닝으로 영어를 완전히 내것으로 만들자!</li>
+                            <li>-영어를 재밌게 배우고 싶으신 분에게 추천</li>
+                            <li><span>만화로 영어공부</span><span>셀프테스트 영상제공</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>명화로 영어배우기</p>
+                        <p>
+                            은지쌤이 골라주는<br>
+                            명작영화와 함께<br>
+                            재미있는 영어공부!
+                        <ul>
+                            <li>-문법,말하기,청취 전 영역을</li>
+                            <li>-명화의 명대사로 쉽고 오래남는 영어공부!</li>
+                            <li>-문화생활과 영어공부를 같이 하고싶은 분에게 추천</li>
+                            <li><span>명화로 영어공부</span><span>오래남는 영어</span></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-lecture-list-four">
+                        <p>여행 필수영어 코스</p>
+                        <p>
+                            10,000명의 현지인<br>
+                            인터뷰로 배우는<br>
+                            여행자 맞춤코스
+                        </p>
+                        <ul>
+                            <li>-여행필수문장과 발음완성을 목표로</li>
+                            <li>-쌍방향 트레이닝으로 리스닝과 스피킹을 한번에!</li>
+                            <li>-외국인 앞에서 자신감있게 말하고 싶은 분에게 추천</li>
+                            <li><span>발음규칙 완전정복</span><span>복습기간 추가제공</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="slide_b">
+                    <li class="b0"></li>
+                    <li class="b1"></li>
+                    <li class="b2"></li>
+                    <li class="b3"></li>
+                </ul>
+            </div>
+            <ul class="lecture-slideArrow-list">
+                <li class="slideArrow-prev"><a href="#"></a></li>
+                <li class="slideArrow-next"><a href="#"></a></li>
+            </ul>
+            <ul class="mobile-arrow">
+                <li class="mobile-arrow-prev"><a href="#"></a></li>
+                <li class="mobile-arrow-next"><a href="#"></a></li>
+            </ul>
+        </div>
+        <!--sub1Content3 end-->
+        
+        <div id="sub1Content4">
+            <div class="content4-wrap">
+                <h2>마음가짐을 이렇게 가져보세요</h2>
+                <ul class="content4-list">
+                    <li>
+                        <div class="inner1 content4-list-inner">
+                            <p class="one">게으름을<br>이겨낼 수 있다!</p>
+                            <p class="two">
+                                나날이 늘어가는
+                                영어실력을 통해
+                                변화되는 나의 모습을
+                                상상해보세요!
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="inner2 content4-list-inner">
+                            <p class="three">크게 말해도<br>부끄럽지  않다!</p>
+                            <p class="four">
+                                부끄러운건
+                                주저하며 늘지않는 
+                                실력입니다
+                                열심히하는 여러분!
+                                오늘도 멋져요!
+                            </p>
+                        </div>
+                    <li>
+                        <div class="inner3 content4-list-inner">
+                            <p class="five">오늘도 해낸 나<br>대견하다!</p>
+                            <p class="six">
+                                꾸준히 할 수 있는 힘을
+                                키운다면 어떤 일에도
+                                멋진 성과를
+                                이뤄내실거에요!
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--sub1Content4 end-->
+
+        <footer id="mainFooter">
+            <div id="customer">
+                <ul class="customer-list">
+                    <li>
+                        <h3>애즈케이션 고객센터</h3>
+                    </li>
+                    <li><p>상담시간 평일</p><span>02-1234-5678</span></li>
+                    <li>
+                        <p>언제든 문의주세요.</p>
+                        <p>친절하고 상세하게 안내 드리겠습니다.</p>
+                        <p>(주말/공휴일 문의 시 다음 영업일에 안내)</p>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="#">1:1문의</a></li>
+                            <li><a href="#">F&A</a></li>
+                            <li><a href="#">원격지원</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--customer end-->
+
+            <div id="secondFooter">
+                <div class="secondFooter-top-wrap">
+                    <dl class="corp1">
+                        <dt style="display:none">개인정보처리방침관련</dt>
+                        <dd><a href="#">회사소개</a></dd>
+                        <dd><a href="#">서비스 이용약관</a></dd>
+                        <dd><a href="#">개인정보처리방침</a></dd>
+                    </dl>
+                    <ul class="footer-icon">
+                        <li><a href="#"><img src="icon/youtube.png" alt="유튜브"></a></li>
+                        <li><a href="#"><img src="icon/instargram.png" alt="인스타그램"></a></li>
+                        <li><a href="#"><img src="icon/facebook.png" alt="페이스북"></a></li>
+                        <li><a href="#"><img src="icon/blog.png" alt="블로그"></a></li>
+                    </ul>
+                    </div>
+
+                <div class="secondFooter-bottom-wrap">
+                    <h1>
+                        <a href="main.html">
+                            <img src="icon/logo.png" alt="애즈케이션 로고">
+                        </a>
+                    </h1>
+                    <dl class="corp2">
+                        <dt style="display:none">azcation</dt>
+                        <dd>(주) 애즈케이션</dd>
+                        <dd>대표  김영어</dd>
+                        <dd>마케팅 및 제휴문의 azcation@naver.com </dd>
+                        <dd>주소   서울특별시 구로구 공원로 83 4층</dd>
+                        <dd>전화 02-1234-5678</dd>
+                        <dd>개인정보보호책임자: 김영어</dd>
+                        <dd>사업자등록번호: 123-45-67890 </dd>
+                        <dd>통신판매업신고번호: 제2023-서울구로구-1275호 [정보조회]</dd>
+                        <dd>Copyright 2023 Azcation Co. All right Reserved</dd>
+                    </dl>
+                </div>
+            </div>
+            <!--secontFooter end-->
+        </footer>
+        <!--mainFooter end-->
+    </div>
+    <!--wrap end-->
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/sub2.css">
+    <title>영어를 재밌게! 재미있는 영어 AZcation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //////topevent toggle//////////////
+            $('.close').click(function(){
+                $(this).hide();
+                $(this).parent().slideUp();
+            });
+            /////////nav toggle SCRIPT/////////
+            var navToggle=$('.allmenu_view');
+            var navAll=$('#allMenu_box');
+            
+            navToggle.click(function(){
+                navAll.slideToggle(600);
+            });
+        });
+    </script>
+     <script>
+        $(document).ready(function(){
+             //////////MOBILE SCRIPT///////
+                    ///////allMenu-toggle SCRIPT///////
+                    $('.allMenu-toggle').click(function(){
+                        $('#mobile_allMenu_box').animate({'left':'0'},800);
+                    });
+                    $('.mobile_allMenu_box-toggle').click(function(){
+                        $('#mobile_allMenu_box').animate({'left':'-110%'},800);
+                    });
+                    var all=$('.mobile_allMenu_box_list>li>a');
+                    var allList=$('.mobile_allMenu_box_list>li>ul');
+                    all.each(function(){
+                        $(this).click(function(){
+                            $(this).next().slideToggle(200).parent()
+                            .siblings().children('ul:visible').slideUp();
+                        });
+                    });
+
+                    ////////touchNavSlide SCRIPT///////////
+                    var swiper = new Swiper('.snbSwiper', {
+                        slidesPerView: 'auto',
+                        preventClicks: true,
+                        preventClicksPropagation: false,
+                        observer: true,
+                        observeParents: true
+                    });
+                    var $snbSwiperItem = $('.snbSwiper .swiper-wrapper .swiper-slide a');
+                    $snbSwiperItem.click(function(){
+                        var target = $(this).parent();
+                        $snbSwiperItem.parent().removeClass('on')
+                        target.addClass('on');
+                        muCenter(target);
+                    })
+
+                    function muCenter(target){
+                        var snbwrap = $('.snbSwiper .swiper-wrapper');
+                        var targetPos = target.position();
+                        var box = $('.snbSwiper');
+                        var boxHarf = box.width()/2;
+                        var pos;
+                        var listWidth=0;
+                    
+                        snbwrap.find('.swiper-slide').each(function(){
+                            listWidth += $(this).outerWidth();
+                        })
+                    
+                        var selectTargetPos = targetPos.left + target.outerWidth()/2;
+                        if (selectTargetPos <= boxHarf) { // left
+                            pos = 0;
+                        }else if ((listWidth - selectTargetPos) <= boxHarf) { //right
+                            pos = listWidth-box.width();
+                        }else {
+                            pos = selectTargetPos - boxHarf;
+                        }
+                    
+                        setTimeout(function(){snbwrap.css({
+                            "transform": "translate3d("+ (pos*-1) +"px, 0, 0)",
+                            "transition-duration": "500ms"
+                        })}, 200);
+                    }
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="mainHeader">
+            <div class="topEvent">
+                <span>5월 신규반 OPEN!</span>
+                <span>가정의달 이벤트 놓치지 마세요!</span>
+                <div class="close"></div>
+            </div>
+            <!--topEvent end-->
+
+            <div class="middleHeader">
+                <div class="logo">
+                    <a href="main.html">
+                        <img src="icon/logo.png" alt="로고">
+                    </a>
+                </div>
+
+                <div class="mainSearch">
+                    <form method="post" id="sform" name="sform">
+                        <fieldset>
+                            <legend class="skip">애즈케이션 강의검색</legend>
+                            <label for="sbox" class="skip">영어 강의 검색어 입력</label>
+                            <input type="search" id="sbox" placeholder="찾고계신 강의를 검색해 보세요">
+                            <input type="image" src="icon/search.svg" width="38" height="31" alt="검색">
+                        </fieldset>
+                    </form>
+                    <ul class="searchList">
+                        <li><a href="#">#왕초보영어</a></li>
+                        <li><a href="#">#현지회화</a></li>
+                        <li><a href="#">#만화로학습</a></li>
+                        <li><a href="#">#문법</a></li>
+                        <li><a href="#">#패키지추천</a></li>
+                    </ul>
+                </div>
+                <!--mainSearch end-->
+                <div id="gnb-wrap">
+                    <nav id="gnb">
+                        <ul>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="header-icon">
+                        <li><a href="#"><img src="icon/youtube.png" width="30" height="30" alt="유튜브"></a></li>
+                        <li><a href="#"><img src="icon/instargram.png" width="30" height="30" alt="인스타그램"></a></li>
+                        <li><a href="#"><img src="icon/facebook.png" width="30" height="30" alt="페이스북"></a></li>
+                        <li><a href="#"><img src="icon/blog.png" width="30" height="30" alt="블로그"></a></li>
+                    </ul>
+                </div>
+                <!--gnb-wrap end-->
+            </div>
+            <!--middleHeader end-->
+            <div class="allMenu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="mobile_allMenu_box">
+                <div class="mobile_allMenu_box-toggle">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="mobile-icon">
+                    <h2><a href="#"><img src="icon/logo2.png" alt="logo"></a></h2>
+                </div>
+                <ul>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+                <ul class="mobile_allMenu_box_list">
+                    <li>
+                        <a href="#">전체강의</a>
+                        <ul class="mobile_allMenu_sub mobile_allClass_sub">
+                            <li>
+                                <a href="#">단과</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">레벨별</a>
+                                        <ul>
+                                            <li><a href="#">왕초보</a></li>
+                                            <li><a href="#">초중급</a></li>
+                                            <li><a href="#">중급이상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">학습영역별</a>
+                                        <ul>
+                                            <li><a href="#">회화</a></li>
+                                            <li><a href="#">어휘표현</a></li>
+                                            <li><a href="#">문법</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">패키지</a>
+                                <ul>
+                                    <li><a href="#">어학원 패키지</a></li>
+                                    <li><a href="#">100% 환급 패키지</a></li>
+                                    <li><a href="#">평생수강 패키지</a></li>
+                                    <li><a href="#">100일의 기적 패키지</a></li>
+                                    <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                </ul>
+                            </li>
+                            <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">학습지원센터</a>
+                        <ul class="mobile_allMenu_sub">
+                            <li><a href="#">공부 질문하기</a></li>
+                            <li><a href="#">자료실</a></li>
+                            <li><a href="#">우수회원 인터뷰</a></li>
+                            <li><a href="#">학습랭킹</a></li>                                  
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">이벤트</a>
+                        <ul class="mobile_allMenu_sub">
+                            <li><a href="sub2.html">아이패드 이벤트</a></li>
+                            <li><a href="#">당첨자 발표</a></li>                               
+                        </ul>
+                    </li>
+
+                    <li><a href="#">레벨테스트</a></li>
+                    <li><a href="#">챌린지NOW</a></li>
+                    <li><a href="#">솔직후기</a></li>
+                </ul>
+            </nav>
+            <!--mobile_allMenu_box end-->
+
+            <nav id="lnb">
+                <div class="lnb-wrap">
+                    <div class="allmenu_view">
+                        <a href="#"></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">전체강의</a>
+                            <ul class="subOne">
+                                <li>
+                                    <a href="#">단과</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">레벨별</a>
+                                            <ul>
+                                                <li><a href="#">왕초보</a></li>
+                                                <li><a href="#">초중급</a></li>
+                                                <li><a href="#">중급이상</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">학습영역별</a>
+                                            <ul>
+                                                <li><a href="#">회화</a></li>
+                                                <li><a href="#">어휘표현</a></li>
+                                                <li><a href="#">문법</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">패키지</a>
+                                    <ul>
+                                        <li><a href="#">어학원 패키지</a></li>
+                                        <li><a href="#">100% 환급 패키지</a></li>
+                                        <li><a href="#">평생수강 패키지</a></li>
+                                        <li><a href="#">100일의 기적 패키지</a></li>
+                                        <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                    </ul>
+                                </li>
+                                <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">레벨테스트</a></li>
+                        <li><a href="#">솔직후기</a></li>
+                        <li><a href="#">챌린지NOW</a></li>
+                        <li>
+                            <a href="#">학습지원센터</a>
+                            <ul class="subTwo">
+                                <li><a href="#">공부 질문하기</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">우수회원 인터뷰</a></li>
+                                <li><a href="#">학습랭킹</a></li>                                  
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="subThree">
+                                <li><a href="sub2.html">아이패드 이벤트</a></li>
+                                <li><a href="#">당첨자 발표</a></li>                               
+                            </ul>
+                        </li>
+                        <li><a href="#">나의강의실</a></li>
+                    </ul>
+                </div>
+                <!--lnb-wrap end-->
+
+                <nav id="mobile-lnb">
+                    <div class="swiper-container snbSwiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href="#">전체강의</a></li>
+                            <li class="swiper-slide"><a href="#">레벨테스트</a></li>
+                            <li class="swiper-slide"><a href="#">솔직후기</a></li>
+                            <li class="swiper-slide"><a href="#">챌린지NOW</a></li>
+                            <li class="swiper-slide"><a href="#">학습지원센터</a></li>
+                            <li class="swiper-slide"><a href="sub2.html">이벤트</a></li>
+                            <li class="swiper-slide"><a href="#">나의강의실</a></li>
+                        </ul>
+                    </div>
+                    <!--swiper-container / snbSwiper end-->
+                </nav>
+                <!--mobile-lnb end-->
+
+                <nav id="allMenu_box">
+                    <ul class="allMenu_box_list">
+                        <li>
+                            <a href="#">전체강의</a>
+                            <ul class="allMenu_sub allClass_sub">
+                                <li>
+                                    <a href="#">단과</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">레벨별</a>
+                                            <ul>
+                                                <li><a href="#">왕초보</a></li>
+                                                <li><a href="#">초중급</a></li>
+                                                <li><a href="#">중급이상</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">학습영역별</a>
+                                            <ul>
+                                                <li><a href="#">회화</a></li>
+                                                <li><a href="#">어휘표현</a></li>
+                                                <li><a href="#">문법</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">패키지</a>
+                                    <ul>
+                                        <li><a href="#">어학원 패키지</a></li>
+                                        <li><a href="#">100% 환급 패키지</a></li>
+                                        <li><a href="#">평생수강 패키지</a></li>
+                                        <li><a href="#">100일의 기적 패키지</a></li>
+                                        <li><a href="#">비즈니스 회화 패키지</a></li>                                    
+                                    </ul>
+                                </li>
+                                <li><a href="sub1.html">WHY애즈케이션?</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">학습지원센터</a>
+                            <ul class="allMenu_sub">
+                                <li><a href="#">공부 질문하기</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">우수회원 인터뷰</a></li>
+                                <li><a href="#">학습랭킹</a></li>                                  
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="allMenu_sub">
+                                <li><a href="sub2.html">아이패드 이벤트</a></li>
+                                <li><a href="#">당첨자 발표</a></li>                               
+                            </ul>
+                        </li>
+
+                        <li><a href="#">레벨테스트</a></li>
+                        <li><a href="#">챌린지NOW</a></li>
+                        <li><a href="#">솔직후기</a></li>
+                    </ul>
+                </nav>
+                <!--allMenu_box end-->
+            </nav>
+            <!--lnb end-->
+        </header>
+        <!--mainHeader end-->
+
+        <div id="sub2Content1">
+            <div class="content1-inner">
+                <ul class="content1-banner">
+                    <li><img src="images/ipad2.png" alt="아이패드이미지"></li>
+                    <li>
+                        <p>공부만 했는데 아이패드 GET!</p>
+                        <h2>100% 아이패드 증정 EVENT</h2>
+                    </li>
+                    <li>
+                        <p>
+                            인강 필수템 아이패드를<br>
+                            최신 기종으로 100%<br>
+                            제공해드립니다!
+                        </p>
+                        <p>*한정수량 조기마감 시 자동 종료*</p>
+                    </li>
+                </ul>
+                <!--content1-banner emd-->
+                
+                <div class="content1-way">
+                    <h2>아이패드 증정 이벤트 참여방법</h2>
+                    <ul class="content1-way-list">
+                        <li>
+                            <p>STEP1</p>
+                            <P>사이트 접속 후 원하는 강의 클릭</P>
+                            <img src="images/sub2list1.png" alt="이벤트참여방법1">
+                        </li>
+                        <li>
+                            <p>STEP2</p>
+                            <P>강의 결제시 사은품 -> 아이패드 선택</p>
+                            <img src="images/sub2list2.png" alt="이벤트참여방법1">
+                        </li>
+                        <li>
+                            <p>STEP3</p>
+                            <P>수령하실 주소 필수 작성</p>
+                            <img src="images/sub2list3.png" alt="이벤트참여방법1">
+                        </li>
+                        <li>
+                            <p>STEP4</p>
+                            <p>아이패드와 함께 수강 시작!</p>
+                            <img src="images/sub2list4.png" alt="이벤트참여방법1">
+                        </li>
+                    </ul>
+                </div>
+                <!--content1-way end-->
+            </div>
+            <!--content1-inner end-->
+            <a class=content1-button href="#">강의 신청하러가기</a>
+        </div>
+        <!--sub2Content2 end-->
+        
+        <div id="sub2Content2">
+            <div class="content2-inner">
+                <h2>전체 이벤트 확인하기</h2>
+                <ul class="content2-list">
+                    <li>
+                        <div>
+                            <p>
+                                회원가입 시 가입축하<br>쿠폰을 제공합니다
+                            </p>
+                        </div>
+                        <span class="ing">진행중</span>
+                        <span>회원가입 할인쿠폰 증정 이벤트</span>
+                        <p>이벤트 기간 2023.01.01 ~ </p>
+                    </li>
+                    <li>
+                        <div>
+                            <p>
+                                카카오톡<br> 친구추가하고<br>
+                                1만원 할인쿠폰<br> 받아가세요!
+                            </p>
+                            <p><img src="images/event3-kakaobackground.png" alt="카카오톡아이콘"></p>
+                        </div>
+                        <span class="ing">진행중</span>
+                        <span>카카오톡 친구추가 할인쿠폰 이벤트</span>
+                        <p>이벤트 기간 2023.01.01 ~ </p>
+                    </li>
+                    <li>
+                        <div>
+                            <p>
+                                수강후기를 작성해주신<br>
+                                모든 회원님들께 100%<br>
+                                상품증정 랜덤박스를
+                                제공합니다!
+                            </p>
+                            <div>
+                                <span>NEW</span>
+                                <p>
+                                    랜덤박스
+                                    제공
+                                </p>
+                            </div>
+                        </div>
+                        <span class="ing">진행중</span>
+                        <span>수강후기 랜덤박스 증정 이벤트</span>
+                        <p>이벤트 기간 2023.01.01 ~ </p>
+                    </li>
+                    <li>
+                        <div>
+                        </div>
+                        <span class="ing">종료</span>
+                        <span>오픈기념 교재 무료배포 이벤트</span>
+                        <p>이벤트 기간 2022.01.01 ~ 2023.01.01</p>
+                    </li>
+                </ul>
+                <!--content2-list end-->
+            </div>
+            <!--content2-inner end-->
+        </div>
+        <!--subContent2 end-->
+
+        <div id="sub2Content2Guide">
+            <h2>이벤트 유의사항 안내</h2>
+            <ul class="guide guide1">
+                <li>기본사항</li>
+                <li>
+                    <ul>
+                        <li>iPad는 학습이용권 등록 시 자동으로 발송 시작합니다.</li>
+                        <li>iPad 이벤트는 한정기간동안 진행하고 있으며, 본 이벤트 페이지에서 신청하신 분에 한하여 혜택을 제공합니다.</li>
+                        <li>본 이벤트는 고객 성원으로 인해 연장되어 추가 접수되며, 조기에 마감될 수 있습니다.</li>
+                        <li>상품증정 이벤트의 경우 기타소득으로 분류되며, 제세공과금 22% 공제 후 지급됩니다.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="guide guide2">
+                <li>배송안내</li>
+                <li>
+                    <ul>
+                        <li>구매 후 익일에 배송이 진행됩니다 (공휴일 / 주말 제외)</li>
+                        <li>배송사 사정으로 배송이 지연될 수 있는 점 양해 바랍니다.</li>
+                        <li>iPad는 각각 다른 출고처에서 개별 발송 되므로 수령일이 상이할 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="guide guide3">
+                <li>환불정책</li>
+                <li>
+                    <ul>
+                        <li>환불시 <a href="#">애즈케이션 환불 정책</a>에 따라 환불이 진행됩니다.</li>
+                        <li>배송, 결제, 환불 및 소비자분쟁해결의 기준은 <a href="#">자사 약관</a>을 통해 안내드립니다.</li>
+                        <li>상품이 개봉되지 않은 상태로 기기 구매일로부터 14일 이내 환불 신청이 가능하며, 반품 시 왕복 택배비용(5,000원) 차감됩니다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--sub2Content2Guide end-->
+
+        <footer id="mainFooter">
+            <div id="customer">
+                <ul class="customer-list">
+                    <li>
+                        <h3>애즈케이션 고객센터</h3>
+                    </li>
+                    <li><p>상담시간 평일</p><span>02-1234-5678</span></li>
+                    <li>
+                        <p>언제든 문의주세요.</p>
+                        <p>친절하고 상세하게 안내 드리겠습니다.</p>
+                        <p>(주말/공휴일 문의 시 다음 영업일에 안내)</p>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="#">1:1문의</a></li>
+                            <li><a href="#">F&A</a></li>
+                            <li><a href="#">원격지원</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--customer end-->
+
+            <div id="secondFooter">
+                <div class="secondFooter-top-wrap">
+                    <dl class="corp1">
+                        <dt style="display:none">개인정보처리방침관련</dt>
+                        <dd><a href="#">회사소개</a></dd>
+                        <dd><a href="#">서비스 이용약관</a></dd>
+                        <dd><a href="#">개인정보처리방침</a></dd>
+                    </dl>
+                    <ul class="footer-icon">
+                        <li><a href="#"><img src="icon/youtube.png" alt="유튜브"></a></li>
+                        <li><a href="#"><img src="icon/instargram.png" alt="인스타그램"></a></li>
+                        <li><a href="#"><img src="icon/facebook.png" alt="페이스북"></a></li>
+                        <li><a href="#"><img src="icon/blog.png" alt="블로그"></a></li>
+                    </ul>
+                    </div>
+
+                <div class="secondFooter-bottom-wrap">
+                    <h1>
+                        <a href="main.html">
+                            <img src="icon/logo.png" alt="애즈케이션 로고">
+                        </a>
+                    </h1>
+                    <dl class="corp2">
+                        <dt style="display:none">azcation</dt>
+                        <dd>(주) 애즈케이션</dd>
+                        <dd>대표  김영어</dd>
+                        <dd>마케팅 및 제휴문의 azcation@naver.com </dd>
+                        <dd>주소   서울특별시 구로구 공원로 83 4층</dd>
+                        <dd>전화 02-1234-5678</dd>
+                        <dd>개인정보보호책임자: 김영어</dd>
+                        <dd>사업자등록번호: 123-45-67890 </dd>
+                        <dd>통신판매업신고번호: 제2023-서울구로구-1275호 [정보조회]</dd>
+                        <dd>Copyright 2023 Azcation Co. All right Reserved</dd>
+                    </dl>
+                </div>
+            </div>
+            <!--secontFooter end-->
+        </footer>
+        <!--mainFooter end-->
+    </div>
+    <!--wrap end-->
+</body>
+</html>

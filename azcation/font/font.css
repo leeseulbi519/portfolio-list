@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/*SCDream FONT*/
+@font-face {
+	font-family: 'SCDream1';
+	font-weight: 100;
+	font-display: swap;
+	src: local('SCDream1'), url('SCDream1.otf');
+}
+@font-face {
+	font-family: 'SCDream2';
+	font-weight: 200;
+	font-display: swap;
+	src: local('SCDream2'), url('SCDream2.otf');
+}
+@font-face {
+	font-family: 'SCDream3';
+	font-weight: 300;
+	font-display: swap;
+	src: local('SCDream3'), url('SCDream3.otf');
+}
+@font-face {
+	font-family: 'SCDream4';
+	font-weight: 400;
+	font-display: swap;
+	src: local('SCDream4'), url('SCDream4.otf');
+}
+@font-face {
+	font-family: 'SCDream5';
+	font-weight: 500;
+	font-display: swap;
+	src: local('SCDream5'), url('SCDream5.otf');
+}
+@font-face {
+	font-family: 'SCDream6';
+	font-weight: 600;
+	font-display: swap;
+	src: local('SCDream6'), url('SCDream6.otf');
+}
+@font-face {
+	font-family: 'SCDream7';
+	font-weight: 700;
+	font-display: swap;
+	src: local('SCDream7'), url('SCDream7.otf');
+}
+@font-face {
+	font-family: 'SCDream8';
+	font-weight: 800;
+	font-display: swap;
+	src: local('SCDream8'), url('SCDream8.otf');
+}
+@font-face {
+	font-family: 'SCDream9';
+	font-weight: 900;
+	font-display: swap;
+	src: local('SCDream9'), url('SCDream9.otf');
+}
+
+/*Recipekorea FONT*/
+@font-face {
+	font-family: 'Recipekorea';
+	font-weight: medium;
+	font-display: swap;
+	src: local('Recipekorea'), url('Recipekorea.otf');
+}
+@font-face {
+	font-family: 'Recipekorea';
+	font-weight: medium;
+	font-display: swap;
+	src: local('Recipekorea'), url('Recipekorea.ttf');
+}
+
+/*JGaegujaengyi FONT*/
+@font-face {
+	font-family: 'JGaegujaengyi';
+	font-weight: light;
+	font-display: swap;
+	src: local('JGaegujaengyi_light'), url('JGaegujaengyi_Light.otf');
+}
+@font-face {
+	font-family: 'JGaegujaengyi';
+	font-weight: medium;
+	font-display: swap;
+	src: local('JGaegujaengyi_medium'), url('JGaegujaengyi_Medium.otf');
+}
+@font-face {
+	font-family: 'JGaegujaengyi';
+	font-weight: bold;
+	font-display: swap;
+	src: local('JGaegujaengyi_bold'), url('JGaegujaengyi_Bold.otf');
+}
+
+
+/*SourSans FONT*/
+@font-face {
+	font-family: 'SourceSansPro-ExtraLight';
+	font-weight: 200;
+	font-display: swap;
+	src: local('SourceSansPro-ExtraLight'), url('SourceSansPro-ExtraLight.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-ExtraLightItalic';
+	font-weight: 200;
+	font-display: swap;
+	src: local('SourceSansPro-ExtraLightItalic'), url('SourceSansPro-ExtraLightItalic.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-Light';
+	font-weight: 300;
+	font-display: swap;
+	src: local('SourceSansPro-Light'), url('SourceSansPro-Light.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-LightItalic';
+	font-weight: 300;
+	font-display: swap;
+	src: local('SourceSansPro-LightItalic'), url('SourceSansPro-LightItalic.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-Regular';
+	font-weight: 400;
+	font-display: swap;
+	src: local('SourceSansPro-Regular'), url('SourceSansPro-Regular.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-Italic';
+	font-weight: 400;
+	font-display: swap;
+	src: local('SourceSansPro-Italic'), url('SourceSansPro-Italic.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-SemiBold';
+	font-weight: 600;
+	font-display: swap;
+	src: local('SourceSansPro-SemiBold'), url('SourceSansPro-SemiBold.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-SemiBoldItalic';
+	font-weight: 600;
+	font-display: swap;
+	src: local('SourceSansPro-SemiBoldItalic'), url('SourceSansPro-SemiBoldItalic.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-Bold';
+	font-weight: 700;
+	font-display: swap;
+	src: local('SourceSansPro-Bold'), url('SourceSansPro-Bold.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-BoldItalic';
+	font-weight: 700;
+	font-display: swap;
+	src: local('SourceSansPro-BoldItalic'), url('SourceSansPro-BoldItalic.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-Black';
+	font-weight: 900;
+	font-display: swap;
+	src: local('SourceSansPro-Black'), url('SourceSansPro-Black.ttf');
+}
+@font-face {
+	font-family: 'SourceSansPro-BlackItalic';
+	font-weight: 900;
+	font-display: swap;
+	src: local('SourceSansPro-BlackItalic'), url('SourceSansPro-BlackItalic.ttf');
+}
