@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/*gmarketSans*/
+@font-face {
+	font-family: 'pretendardThin';
+	font-weight: 100;
+	src: local('../font/Pretendard-Thin.otf')
+}
+@font-face {
+	font-family: 'pretendardExtraLight';
+	font-weight: 200;
+	src: local('../font/Pretendard-ExtraLight.otf')
+}
+@font-face {
+	font-family: 'PretendardLight';
+	font-weight: 300;
+	src: local('../font/Pretendard-Light.otf')
+}
+@font-face {
+	font-family: 'PretendardRegular';
+	font-weight: 400;
+	src: local('../font/Pretendard-Regular.otf')
+}
+@font-face {
+	font-family: 'PretendardMedium';
+	font-weight: 500;
+	src: local('SCD../font/Pretendard-Medium.otf')
+}
+@font-face {
+	font-family: 'PretendardSemiBold';
+	font-weight: 600;
+	src: local('../font/Pretendard-SemiBold.otf')
+}
+@font-face {
+	font-family: 'PretendardBold';
+	font-weight: 700;
+	src: local('../font/Pretendard-Bold.otf')
+}
+@font-face {
+	font-family: 'PretendardExtraBold';
+	font-weight: 800;
+	src: local('../font/Pretendard-ExtraBold.otf')
+}
+@font-face {
+	font-family: 'PretendardBlack';
+	font-weight: 900;
+	src: local('../font/Pretendard-Black.otf')
+}
+
+@font-face {
+	font-family: 'seoleimCool';
+	src: local('../font/SEOLEIMcool.ttf')
+}

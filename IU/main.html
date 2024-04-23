@@ -3,9 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>아이유 팬페이지 아이러브유 </title>
 </head>
 <body>
-    
+    <div id="wrap">
+        <header id="header">
+            <h1 id="logo">
+                <a href="#">
+                    <img src="logo/logo.svg" alt="아이러브유로고">
+                </a>
+            </h1>
+
+            <nav id="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>PROFILE</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>ALBUM</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>GALLERY</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>TOUR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <span>NOTICE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-button">
+                <div class="search-wrap">
+                    <button type="button" class="search-btn"></button>
+                    <form class="search-box">
+                        <input type="search" placeholder="검색어를 입력하세요.">
+                        <input type="submit" value="" class="search-submit">
+                    </form>
+                </div>
+                <div class="lang-wrap">
+                    <button type="button" class="lang-btn">
+                        <span>KOR</span>
+                    </button>
+                    <ul class="lang-list">
+                        <li class="lang-item">
+                            <button>KOR</button>
+                        </li>
+                        <li class="lang-item">
+                            <button>ENG</button>
+                        </li>
+                        <li class="lang-item">
+                            <button>CHI</button>
+                        </li>
+                        <li class="lang-item">
+                            <button>JPN</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="swiper-container">
+            <div class="swiper-wrap">
+                <div class="swiper-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7JT-J00vBqA?si=rxDtG5oO6m9wyNnp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="swiper-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JXUaBJ0e-aU?si=RbUiJosJ8EOf9K0m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="swiper-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MI9Ho2y6p0w?si=6ui8zfRlZDy8zaBt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="swiper-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bANn_L22zE8?si=C0FXWFhLAdiVHR4m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="swiper-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jqdOJsFo_wM?si=GAbQMWVJmrqvo4HR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="swiper-btn-wrap">
+                <button type="button" class="swiper-prev"></button>
+                    <div class="swiper-control">
+                        <span class="current">1</span>
+                        <span class="total">5</span>
+                    </div>
+                <button type="button" class="swiper-next"></button>
+                <div class="swiper-pagination swiper-pagination-bullets">
+                    <span class="pagination-bullet">
+                        <span class="after-bar"></span>
+                    </span>
+                    <span class="pagination-bullet">
+                        <span class="after-bar"></span>
+                    </span>
+                    <span class="pagination-bullet">
+                        <span class="after-bar"></span>
+                    </span>
+                    <span class="pagination-bullet">
+                        <span class="after-bar"></span>
+                    </span>
+                    <span class="pagination-bullet">
+                        <span class="after-bar"></span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <p class="copy">©I LUV YOU ALL RIGHTS RESERVED</p>
+            <ul class="sns">
+                <li class="sns-list">
+                    <a href="#">
+                        <img src="icon/youtube.svg" alt="유튜브아이콘">
+                    </a>
+                </li>
+                <li class="sns-list">
+                    <a href="#">
+                        <img src="icon/twitter.svg" alt="트위터아이콘">
+                    </a>
+                </li>
+                <li class="sns-list">
+                    <a href="#">
+                        <img src="icon/instagram.svg" alt="인스타그램아이콘">
+                    </a>
+                </li>
+                <li class="sns-list">
+                    <a href="#">
+                        <img src="icon/facebook.svg" alt="페이스북아이콘">
+                    </a>
+                </li>
+            </ul>
+            <ul class="fnb">
+                <li class="fnb-item">
+                    <a href="#">
+                        <span>개인정보처리방침</span>
+                    </a>
+                </li>
+                <li class="fnb-item">
+                    <a href="#">
+                        <span>관련 사이트</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>
