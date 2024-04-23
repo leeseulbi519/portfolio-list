@@ -56,18 +56,82 @@ button {
 
 @media screen and (min-width: 1024px) {
   #header {
+    width: 100%;
+    height: 100px;
     position: fixed;
     display: flex;
-    width: 100%;
+    justify-content: space-between;
     padding: 0 20px;
   }
   #header #logo {
     display: flex;
+    flex: 1;
     justify-content: center;
   }
   #header #logo a {
     display: flex;
     width: 100%;
     height: 100%;
+  }
+  #header #logo img {
+    width: 100px;
+    height: auto;
+  }
+  #header #nav {
+    display: flex;
+    flex: 8;
+    justify-content: center;
+  }
+  #header #nav .nav-list {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #header #nav .nav-list .nav-item a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+  #header #nav .nav-list .nav-item a span {
+    font: 17px "seoleimCool";
+    color: #ffffff;
+    line-height: 100px;
+  }
+  #header .header-button {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+  #header .header-button .search-wrap {
+    width: 50px;
+    height: 100%;
+  }
+  #header .header-button .search-wrap .search-btn {
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+  #header .header-button .search-wrap .search-btn:before {
+    content: "";
+    background: url(../icon/search.svg);
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+  }
+  #header .header-button .search-wrap .search-box {
+    display: none;
+  }
+  #header .header-button .lang-wrap .lang-btn span {
+    line-height: 100px;
+    font: 17px "seoleimCool";
+    color: #ffffff;
+  }
+  #header .header-button .lang-wrap .lang-list {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

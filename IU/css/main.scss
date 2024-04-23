@@ -11,23 +11,91 @@ button {cursor: pointer; background-color: transparent; border: 0; width:100%; h
 #skip, .skip{position:absolute; text-indent: -9999px;}
 
 $maincolor : #ffffff;
+@mixin box-size($width, $height) {
+    width: $width;
+    height:$height
+  }
+@mixin font($size, $font-family, $color){
+    font:$size $font-family;
+    color:$color;
+}
 #wrap{width: 100vw; height: 100vw; position: relative;}
 
 @media screen and (min-width:1024px){
     #header{
+        @include box-size(100%, 100px);
         position: fixed;
         display: flex;
-        width: 100%;
+        justify-content: space-between;
         padding: 0 20px;
         & #logo{
             display: flex;
+            flex:1;
             justify-content: center;
             & a{
                 display: flex;
-                width: 100%;
-                height: 100%;
+                @include box-size(100%, 100%);
+            }& img{
+                @include box-size(100px, auto);
             }
         }
+        & #nav{
+            display: flex;
+            flex: 8;
+            justify-content: center;
+            & .nav-list{
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                & .nav-item{
+                    & a{
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        padding: 0 20px;
+                        & span{
+                            @include font(17px, 'seoleimCool', $maincolor);
+                            line-height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+        & .header-button{
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            & .search-wrap{
+                @include box-size(50px, 100%);
+                & .search-btn{
+                    position: relative;
+                    width: 100%;
+                    height: 100px;
+                    &:before{
+                        content: "";
+                        background: url(../icon/search.svg);
+                        background-size: contain;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                & .search-box{display: none;}
+            }
+            & .lang-wrap{
+                & .lang-btn{
+                    & span{
+                        line-height: 100px;
+                        @include font(17px, 'seoleimCool', $maincolor);
+                    }
+                }
+                & .lang-list{display: none;}
+            }
+        }
+
     }
 
 }
