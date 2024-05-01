@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.35 58.14">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #c6b1d5;
+      }
+
+      .cls-6 {
+        letter-spacing: .2em;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        isolation: isolate;
+      }
+
+      .cls-6, .cls-7, .cls-9 {
+        fill: #fff;
+        font-family: BagelFatOne-Regular, 'Bagel Fat One';
+        font-size: 8px;
+      }
+
+      .cls-7 {
+        letter-spacing: .2em;
+      }
+
+      .cls-4 {
+        fill: #d8d93f;
+      }
+
+      .cls-5 {
+        fill: #cabbc1;
+      }
+
+      .cls-10 {
+        opacity: .6;
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-2" d="M6.47,45.34h43.4c3.53,0,6.4,2.87,6.4,6.4h0c0,3.53-2.87,6.4-6.4,6.4H6.47c-3.53,0-6.4-2.87-6.4-6.4H.07c0-3.53,2.87-6.4,6.4-6.4Z"/>
+    </clipPath>
+  </defs>
+  <g id="_레이어_2-2" data-name=" 레이어 2">
+    <g>
+      <g>
+        <circle class="cls-5" cx="27.23" cy="6.94" r="5.6"/>
+        <path class="cls-4" d="M6.03,16.44h0c2.32,0,4.2,1.88,4.2,4.2v18.9c0,2.32-1.88,4.2-4.2,4.2h0c-2.32,0-4.2-1.88-4.2-4.2v-18.9c0-2.32,1.88-4.2,4.2-4.2Z"/>
+        <path class="cls-3" d="M55.13,19.04c-.3-1.7-2.2-2.9-4.2-2.6-1.9.3-3.3,1.9-3,3.5,0,.8.2,7.1.2,8.8,0,5.1-3.6,8.6-8.7,8.6s-8.7-3.5-8.7-8.6,0-8,.2-8.7c.3-1.7-1.1-3.3-3-3.6-2-.3-3.8.9-4.2,2.6-.2,1.1-.2,9.6-.2,9.7,0,8.7,6.7,15,15.9,15s15.9-6.3,15.9-15,0-8.6-.2-9.7h0Z"/>
+        <path class="cls-4" d="M9.53,10.24c1.3-.9,2.3-2.3,2.5-3.9.2-1.9-.4-3.6-1.9-4.4-1.2-.7-2.7-.5-4.1.2-1.4-.8-2.9-.9-4.1-.2C.53,2.74-.17,4.44.03,6.34c.2,1.6,1.2,3,2.5,3.9l3.2,2.1c.1.1.3.1.5,0l3.2-2.1h.1Z"/>
+        <path class="cls-3" d="M54.13,13.74c-.4,0-.9-.1-1.3-.4l-5.9-4.2c-.5-.4-.9-1-.9-1.7s.2-1.3.7-1.7l5.9-5.2c.9-.8,2.3-.7,3.1.2.8.9.7,2.3-.2,3.1l-3.8,3.4,3.7,2.6c1,.7,1.2,2.1.5,3-.4.6-1.1.9-1.8.9h0Z"/>
+      </g>
+      <g class="cls-1">
+        <image class="cls-8" width="281" height="64" transform="translate(-.45 45.22) scale(.2)" xlink:href="logo-1.png"/>
+        <image class="cls-10" width="337" height="65" transform="translate(-6.08 45.22) scale(.2)" xlink:href="logo-2.png"/>
+      </g>
+      <g class="cls-8">
+        <g class="cls-8">
+          <text class="cls-7" transform="translate(5.97 54.38)"><tspan x="0" y="0">I</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-9" transform="translate(13.07 54.38)"><tspan x="0" y="0">L</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-9" transform="translate(18.17 54.38)"><tspan x="0" y="0">U</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-6" transform="translate(23.97 54.38)"><tspan x="0" y="0">V</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-9" transform="translate(33.57 54.38)"><tspan x="0" y="0">Y</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-9" transform="translate(39.07 54.38)"><tspan x="0" y="0">O</tspan></text>
+        </g>
+        <g class="cls-8">
+          <text class="cls-9" transform="translate(45.07 54.38)"><tspan x="0" y="0">U</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

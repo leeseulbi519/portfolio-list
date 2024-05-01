@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제주관광의 모든것! 위드제주</title>
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/with-jeju-main.css">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="slick-1.8.1/slick/slick.min.js"></script>
+    <script src="js/slick-main.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body> 
+    <div id="wrap">
+        <header id = "mainHeader">
+            <div class="header-inner layout">
+                <h1 class="logo">
+                    <a href="with-jeju-main.html">
+                        <img src="logo/logo3.svg" alt = "위드제주로고">
+                    </a>
+                </h1>
+                <nav id = "menu">
+                    <ul id = "gnb">
+                        <li class="depth-1">
+                            <a href="#" class="depth-1-link"><span>여행지</span></a>
+                            <ul class="lnb">
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>관광지</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>축제&행사</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth-1">
+                            <a href="#" class="depth-1-link"><span>테마별추천</span></a>
+                            <ul class="lnb">
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>트랙킹</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>익사이팅</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>힐링여행</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="with-jeju-sub1.html" class="depth-2-link"><span>드라이빙</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>일정별코스</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>캠핑</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth-1">
+                            <a href="#" class="depth-1-link"><span>음식&숙박</span></a>
+                            <ul class="lnb">
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>맛집 명소거리</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="with-jeju-sub2.html" class="depth-2-link"><span>전통 숙박업소</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>제주 대표음식</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth-1">
+                            <a href="#" class="depth-1-link"><span>문화&쇼핑</span></a>
+                            <ul class="lnb">
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>면세점</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>이제주몰</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>제주Deal</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>관광지해설사</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>문화유산</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth-1">
+                            <a href="#" class="depth-1-link"><span>나의여행</span></a>
+                            <ul class="lnb">
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>내가 찜한여행</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>나의 여행일정</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>나의 리뷰</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>나의 질문</span></a>
+                                </li>
+                                <li class="depth-2">
+                                    <a href="#" class="depth-2-link"><span>정보수정</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="mobile-gnb">
+                    <button class="sidebar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </button>
+                    <div class="sidebar-wrap">
+                        <div class="sidebar">
+                            <ul id = "mo-nav-icon">
+                                <li class="icon-list login">
+                                    <a href="#">
+                                        <span>로그인</span>
+                                    </a>
+                                </li>
+                                <li class="icon-list language">
+                                    <button>
+                                        <span>언어변경</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <ul id="mo-gnb">
+                                <li class="depth-1">
+                                    <a href="#" class="depth-1-link"><span>여행지</span></a>
+                                    <ul class="m-lnb">
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>관광지</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>축제</span>&행사</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="depth-1">
+                                    <a href="#" class="depth-1-link"><span>테마별추천</span></a>
+                                    <ul class="m-lnb">
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>트랙킹</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>익사이팅</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>힐링여행</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="with-jeju-sub1.html" class="depth-2-link"><span>드라이빙</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>일정별코스</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>캠핑</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="depth-1">
+                                    <a href="#" class="depth-1-link"><span>음식&숙박</span></a>
+                                    <ul class="m-lnb">
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>맛집 명소거리</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="with-jeju-sub2.html" class="depth-2-link"><span>전통 숙박업소</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>제주 대표음식</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="depth-1">
+                                    <a href="#" class="depth-1-link"><span>문화&쇼핑</span></a>
+                                    <ul class="m-lnb">
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>면세점</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>이제주몰</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>제주Deal</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>관광지해설사</span></a>
+                                        </li>
+                                        <li class="depth-2"><a href="#" class="depth-2-link"><span>문화유산</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="depth-1">
+                                    <a href="#" class="depth-1-link"><span>나의여행</span></a>
+                                    <ul class="m-lnb">
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>내가 찜한여행</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>나의 여행일정</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>나의 리뷰</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>나의 질문</span></a>
+                                        </li>
+                                        <li class="depth-2">
+                                            <a href="#" class="depth-2-link"><span>정보수정</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <ul id = "nav-icon">
+                    <li class="icon-list search">
+                        <button>
+                            검색
+                        </button>
+                    </li>
+                    <li class="icon-list login">
+                        <a href="#">
+                            로그인
+                        </a>
+                    </li>
+                    <li class="icon-list language">
+                        <button>
+                            언어변경
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+
+        <section class="mainBanner">
+            <h2 class="skip">메인배너영역</h2>
+            <ul class="mainBannerList">
+                <li class="active-slide">
+                    <hgroup>
+                        <p>매력적인 검은모래 해변</p>
+                        <h2>쇠소깍 해수욕장</h2>
+                    </hgroup>
+                </li>
+                <li>
+                    <hgroup>
+                        <p>아름다운 폭포 영롱한 물빛</p>
+                        <h2>천제연 폭포</h2>
+                    </hgroup>
+                </li>
+                <li>
+                    <hgroup>
+                        <p>제주의 꽃을 담다</p>
+                        <h2>휴애리 자연생활공원</h2>
+                    </hgroup>
+                </li>
+                <li>
+                    <hgroup>
+                        <p>꿈꾸던 옥빛바다</p>
+                        <h2>협재 해수욕장</h2>
+                    </hgroup>
+                </li>
+            </ul>
+            <ul class="mainBannerNav">
+                <li class="mBN mBN1 active-dot">
+                    <span>쇠소깍 해수욕장</span>
+                </li>
+                <li class="mBN mBN2">
+                    <span>천제연 폭포</span>
+                </li>
+                <li class="mBN mBN3">
+                    <span>휴애리 자연생활공원</span>
+                </li>
+                <li class="mBN mBN4">
+                    <span>협재 해수욕장</span>
+                </li>
+            </ul>
+            <ul class="mainBannerArrow">
+                <li class="mainBannerArrow-prev">
+                    <button type="button" class="skip">메인배너 좌측버튼</button>
+                </li>
+                <li class="mainBannerArrow-next">
+                    <button type="button" class="skip">메인배너 우측버튼</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="trip-area">
+            <h2 class="skip">메인슬라이드영역</h2>
+            <aside class="trip-title-nav-wrap">
+                <h3 class="trip-title">
+                    <span>제주</span>
+                    <span>테마여행</span>
+                </h3>
+
+                <div class="trip-nav-wrap">
+                    <button type="button" class="mo-trip-nav-btn"></button>
+                    <ul class="trip-nav">
+                        <li class="trip-nav1">
+                            <span>여행에 남는건 사진!</span>
+                            <span>인생샷 코스</span>
+                        </li>
+            
+                        <li class="trip-nav2">
+                            <span>제주바다와 함께하는</span>
+                            <span>해안가 코스</span>
+                            
+                        </li>
+                        <li class="trip-nav3">
+                            <span>건강해지는 여행길</span>
+                            <span>트랙킹 코스</span>
+                            
+                        </li>
+                        <li class="trip-nav4">
+                            <span>쉬고싶은 당신을 위해</span>
+                            <span>힐 링 코스</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <div id="trip-wrap1" class="trip-wrap">
+                <div class="trip trip1">
+                    <section class="bgwrap">
+                        <h3 class="skip">슬라이드배경</h3>
+                        <img class="trip-bg" src="image/trip1-0.jpeg" alt="인생샷코스배경이미지">
+                    </section>
+                    <div class="tripBox" title="1. 세화해변">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip1-0.jpeg" alt="세화해변이미지">
+                            </span>
+                            <span class="tripNum">
+                                01
+                            </span>
+                            <span class="tripTitle">세화해변</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="2. 산방산유채꽃밭">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip1-1.jpeg" alt="산방산유채꽃밭">
+                            </span>
+                            <span class="tripNum">
+                                02
+                            </span>
+                            <span class="tripTitle">산방산유채꽃밭</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="3. 휴애리 자연생활공원">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip1-2.jpeg" alt="휴애리 자연생활공원">
+                            </span>
+                            <span class="tripNum">
+                                03
+                            </span>
+                            <span class="tripTitle">휴애리 자연생활공원</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <ul class="trip-arrow">
+                        <li class="trip-prev">
+                            <button type="button" class="skip">인생샷코스 좌측버튼</button>
+                        </li>
+                        <li class="trip-next">
+                            <button type="button" class="skip">인생샷코스 우측버튼</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--trip-wrap1 end-->
+    
+            <div id="trip-wrap2" class="trip-wrap">
+                <div class="trip trip2">
+                    <section class="bgwrap">
+                        <h3 class="skip">슬라이드배경</h3>
+                        <img class="trip-bg" src="image/trip2-0.jpeg" alt="해안가코스 배경이미지">
+                    </section>
+                    <div class="tripBox" title="1. 함덕해변">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip2-0.jpeg" alt="함덕해변">
+                            </span>
+                            <span class="tripNum">
+                                01
+                            </span>
+                            <span class="tripTitle">함덕해변</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="2. 월정리해변">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip2-1.jpeg" alt="월정리해변">
+                            </span>
+                            <span class="tripNum">
+                                02
+                            </span>
+                            <span class="tripTitle">월정리해변</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="3. 쇠소깍 해변">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip2-2.jpeg" alt="쇠소깍 해변">
+                            </span>
+                            <span class="tripNum">
+                                03
+                            </span>
+                            <span class="tripTitle">쇠소깍 해변</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <ul class="trip-arrow">
+                        <li class="trip-prev">
+                            <button type="button" class="skip">해안가코스 좌측버튼</button>
+                        </li>
+                        <li class="trip-next">
+                            <button type="button" class="skip">해안가코스 우측버튼</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--trip-wrap2 end-->
+    
+            <div id="trip-wrap3" class="trip-wrap">
+                <div class="trip trip3">
+                    <section class="bgwrap">
+                        <h3 class="skip">슬라이드배경</h3>
+                        <img class="trip-bg" src="image/trip3-0.jpeg" alt="트랙킹 코스 배경이미지">
+                    </section>
+                    <div class="tripBox" title="1. 한라산 동백길">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip3-0.jpeg" alt="한라산 동백길">
+                            </span>
+                            <span class="tripNum">
+                                01
+                            </span>
+                            <span class="tripTitle">한라산 동백길</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="2. 한라산 영실코스">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip3-1.jpeg" alt="한라산 영실코스">
+                            </span>
+                            <span class="tripNum">
+                                02
+                            </span>
+                            <span class="tripTitle">한라산 영실코스</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="3. 제주 올레 12코스">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip3-2.jpeg" alt="제주 올레 12코스">
+                            </span>
+                            <span class="tripNum">
+                                03
+                            </span><span class="tripTitle">제주 올레 12코스</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <ul class="trip-arrow">
+                        <li class="trip-prev">
+                            <button type="button" class="skip">트랙킹코스 좌측버튼</button>
+                        </li>
+                        <li class="trip-next">
+                            <button type="button" class="skip">트랙킹코스 우측버튼</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--trip-wrap3 end-->
+    
+            <div id="trip-wrap4" class="trip-wrap">
+                <div class="trip trip4">
+                    <section class="bgwrap">
+                        <h3 class="skip">슬라이드배경</h3>
+                        <img class="trip-bg" src="image/trip4-0.jpeg" alt="힐링 코스 배경이미지">
+                    </section>
+                    <div class="tripBox" title="1. 섶섬지기">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip4-0.jpeg" alt="섶섬지기">
+                            </span>
+                            <span class="tripNum">
+                                01
+                            </span>
+                            <span class="tripTitle">섶섬지기</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="2. 소천지">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip4-1.jpeg" alt="소천지">
+                            </span>
+                            <span class="tripNum">
+                                02
+                            </span>
+                            <span class="tripTitle">쇠소깍</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tripBox" title="3. 왈종미술관">
+                        <a href="#">
+                            <span class="img">
+                                <img src="image/trip4-2.jpeg" alt="월종미술관">
+                            </span>
+                            <span class="tripNum">
+                                03
+                            </span>
+                            <span class="tripTitle">월종미술관</span>
+                            <span class="tripDesc">
+                                얕은 수심과 밝은 물빛이 일렁이는 아름다운 해변으로
+                                제주 동쪽해변에 위치해있습니다. 주변의 예쁜카페와
+                                포토존 그리고 그림같은 풍경은 제주도에 온 이유가 되기에
+                                충분할정도로 아름답습니다. 조용한 분위기에서 파도소리를..
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <ul class="trip-arrow">
+                        <li class="trip-prev">
+                            <button type="button" class="skip">힐링코스 좌측버튼</button>
+                        </li>
+                        <li class="trip-next">
+                            <button type="button" class="skip">힐링코스 우측버튼</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--trip-wrap4 end-->
+        </section>
+
+        <section id = "information">
+            <h2 class="skip">여행정보영역</h2>
+            <h3 class="information-title">
+                <span>제주</span>
+                <span>여행정보</span>
+            </h3>
+
+            <div class="info-left">
+                <ul class="info-icon">
+                    <li>
+                        <a href="#">
+                            <img src="icon/shopping.svg" alt="쇼핑아이콘">
+                            <span>쇼핑</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#">
+                            <img src="icon/culture.svg" alt="문화유적아이콘">
+                            <span>문화유적</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#">
+                            <img src="icon/tour.svg" alt="관광지아이콘">
+                            <span>관광지</span>      
+                        </a>
+                    </li>
+                </ul>
+    
+                <div class="info-banner">
+                    <div class="info-food">
+                        <a href="#">
+                            <hgroup>
+                                <p>제주 바다만큼이나 다양하고 새로운</p>
+                                <h4>제주 로컬맛집</h4>
+                            </hgroup>
+                        </a>
+                    </div>
+    
+                    <div class="info-accommodation">
+                        <a href="with-jeju-sub2.html">
+                            <hgroup>
+                                <p>고즈넉한 제주를 느끼고싶다면?</p>
+                                <h4>제주 전통숙소</h4>
+                            </hgroup>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-right">
+                <div class="info-slide-wrap">
+                    <div class="info-slide-area">
+                        <div class="info-slide">
+                            <a href="#">
+                                <img src="image/event-banner.png" alt="행사배너1">
+                            </a>
+                        </div>
+                        <div class="info-slide">
+                            <a href="#">
+                                <img src="image/event-banner.png" alt="행사배너1">
+                            </a>
+                        </div>
+                        <div class="info-slide">
+                            <a href="#">
+                                <img src="image/event-banner.png" alt="행사배너1">
+                            </a>
+                        </div>
+                        <div class="info-slide">
+                            <a href="#">
+                                <img src="image/event-banner.png" alt="행사배너1">
+                            </a>
+                        </div>
+                        <ul class="info-banner-arrow">
+                            <li class="info-banner-prev">
+                                <button type="button" class="skip">행사배너 좌측버튼</button>
+                            </li>
+                            <li class="info-banner-next">
+                                <button type="button" class="skip">행사배너 우측버튼</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-message-wrap">
+                    <div class="info-message-area">
+                        <div>
+                            <a href="#">도내 관광지 입장 요금 안내(2024.4.10)</a>
+                        </div>
+                        <div>
+                            <a href="#">2024년 제주 해수욕장 개장 및 운영안내</a>
+                        </div>
+                        <div>
+                            <a href="#">용눈이오름 자연휴식년제 해제 고시 알림</a>
+                        </div>
+                        <div>
+                            <a href="#">2024년도 제26회 제주특별자치도 관광기념품 공모전 개최</a>
+                        </div>
+                        <div>
+                            <a href="#">제주관광 지식IN 질문 & 답변챌린지 당첨자 발표</a>
+                        </div>
+                        <ul class="info-message-arrow">
+                            <li class="message-prev">
+                                <button type="button" class="skip">안내정보 상단버튼</button>
+                            </li>
+                            <li class="message-next">
+                                <button type="button" class="skip">안내정보 하단버튼</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="subNav-wrap">
+            <h2 class="skip">서브네비게이션영역</h2>
+            <div class="subNav">
+                <div>
+                    <a href="#">
+                        <img src="icon/weather.svg" alt="날씨아이콘">
+                        <span>날씨</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="icon/traffic.svg" alt="교통아이콘">
+                        <span>교통</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="icon/safety.svg" alt="관광안전 아이콘">
+                        <span>관광안전</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="icon/history.svg" alt="제주역사 아이콘">
+                        <span>제주역사</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="icon/infocenter.svg" alt="관광정보센터 아이콘">
+                        <span>관광정보센터</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="qna">
+            <h2 class="skip">여행qna영역</h2>
+            <h3 class="qna-title">
+                <span>제주</span>
+                <span>질문하기</span>
+            </h3>
+
+            <hgroup class="qna-name">
+                <h4>제주 지식in</h4>
+                <p>
+                    제주 여행에 관해서라면 어떤 것이라도 물어 보세요!
+                    위드제주 상주 전문가를 비롯해 제주를 잘 아는 사람이라면
+                    누구에게라도 답변 받을 수 있습니다.
+                </p>
+            </hgroup>
+
+            <div class="qna-list-area">
+                <h4>신규질문</h4>
+                <ul class="qna-list">
+                    <li>
+                        <a href="#">박물관은 살아있다 애견동반 가능한가요?</a>
+                    </li>
+                    <li>
+                        <a href="#">금오름 분화구에 현재 물 고여있나요?</a>
+                    </li>
+                    <li>
+                        <a href="#">한라산은 예약해야 등반 가능한가요?</a>
+                    </li>
+                    <li>
+                        <a href="#">산굼부리 현재 억새 어떤가요?</a>
+                    </li>
+                    <li>
+                        <a href="#">9월에도 해수욕장 이용 가능 한가요?</a>
+                    </li>
+                    <li>
+                        <a href="#">황우지해안이 낙석위험으로 통제 되어 있는데 임시조치인가요?</a>
+                    </li>
+                    <li>
+                        <a href="#">도두봉 무지개해안도로에 사진찍으러갈건데 요즘 사람 많나요?</a>
+                    </li>
+                    <li>
+                        <a href="#">노란버스 가 없어서 초등학교 학교 수학여행 못오는건가요</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="footer1-wrap">
+                <dl class="footer1">
+                    <dt class="skip">위드제주정보</dt>
+                    <dd>
+                        <a href="#">개인정보처리방침</a>
+                    </dd>
+                    <dd>
+                        <a href="#">이용약관</a>
+                    </dd>
+                    <dd>
+                        <a href="#">틀린정보신고</a>
+                    </dd>
+                    <dd>
+                        <a href="#">제주관광문의</a>
+                    </dd>
+                    <dd>
+                        <a href="#">제주관광사진이용</a>
+                    </dd>
+                    <dd>
+                        <a href="#">제주소식</a>
+                    </dd>
+                    <dd>
+                        <a href="#">관광업체등록신청</a>
+                    </dd>
+                </dl>
+            </div>
+            
+            <div class="footer2-wrap">
+                <address class="footer2-1">
+                    <span>12345)제주특별자치도 제주시 제주로 11(제주동) 위드제주</span>
+                </address>
+                <dl class="footer2-2">
+                    <dt class="skip">위드제주정보</dt>
+                    <dd>Tel : 012-345-6789</dd>
+                    <dd>Fax : 012-345-6789</dd>
+                    <dd>관광문의 : 제주관광공사</dd>
+                    <dd>사업자등록번호 : 012-34-56789</dd>
+                    <dd>관광불편신고 : 제주안내 123콜센터 (국번없이 123번)</dd>
+                </dl>
+                <p>Copyright©Jeju Tourism Organization, All rights reserved.</p>
+                <p>홈페이지에 게시된 이메일 주소가 자동수집되는 것을 거부하며, 위반시 정보통신망법에 의해 처벌될 수 있습니다.</p>
+            </div>
+            
+
+            
+            <h1 class="footer-logo">
+                <a href="with-jeju-main.html">
+                    <img src="logo/logo3.svg" alt="위드제주로고">
+                </a>
+            </h1>
+        </footer>
+    </div>
+    
+    <script src="js/nav.js"></script> 
+</body>
+</html>

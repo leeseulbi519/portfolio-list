@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+/*SCDream FONT*/
+@font-face {
+	font-family: 'SCDream1';
+	font-weight: 100;
+	font-display: swap;
+	src: local('SCDream1'), url('SCDream1.otf');
+}
+@font-face {
+	font-family: 'SCDream2';
+	font-weight: 200;
+	font-display: swap;
+	src: local('SCDream2'), url('SCDream2.otf');
+}
+@font-face {
+	font-family: 'SCDream3';
+	font-weight: 300;
+	font-display: swap;
+	src: local('SCDream3'), url('SCDream3.otf');
+}
+@font-face {
+	font-family: 'SCDream4';
+	font-weight: 400;
+	font-display: swap;
+	src: local('SCDream4'), url('SCDream4.otf');
+}
+@font-face {
+	font-family: 'SCDream5';
+	font-weight: 500;
+	font-display: swap;
+	src: local('SCDream5'), url('SCDream5.otf');
+}
+@font-face {
+	font-family: 'SCDream6';
+	font-weight: 600;
+	font-display: swap;
+	src: local('SCDream6'), url('SCDream6.otf');
+}
+@font-face {
+	font-family: 'SCDream7';
+	font-weight: 700;
+	font-display: swap;
+	src: local('SCDream7'), url('SCDream7.otf');
+}
+@font-face {
+	font-family: 'SCDream8';
+	font-weight: 800;
+	font-display: swap;
+	src: local('SCDream8'), url('SCDream8.otf');
+}
+@font-face {
+	font-family: 'SCDream9';
+	font-weight: 900;
+	font-display: swap;
+	src: local('SCDream9'), url('SCDream9.otf');
+}
+
+/*YapariTrial FONT*/
+@font-face {
+	font-family: 'YapariTrial-Thin';
+	font-weight: 100;
+	font-display: swap;
+	src: local('YapariTrial-Thin'), url('YapariTrial-Thin.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ThinExpanded';
+	font-weight: 100;
+	font-display: swap;
+	src: local('YapariTrial-ThinExpanded'), url('YapariTrial-ThinExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ThinExtended';
+	font-weight: 100;
+	font-display: swap;
+	src: local('YapariTrial-ThinExtended'), url('YapariTrial-ThinExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ThinWide';
+	font-weight: 100;
+	font-display: swap;
+	src: local('YapariTrial-ThinWide'), url('YapariTrial-ThinWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraLight';
+	font-weight: 200;
+	font-display: swap;
+	src: local('YapariTrial-ExtraLight'), url('YapariTrial-ExtraLight.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraLightWide';
+	font-weight: 200;
+	font-display: swap;
+	src: local('YapariTrial-ExtraLightWide'), url('YapariTrial-ExtraLightWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtLtExp';
+	font-weight: 200;
+	font-display: swap;
+	src: local('YapariTrial-ExtLtExp'), url('YapariTrial-ExtLtExp.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtLtExt';
+	font-weight: 200;
+	font-display: swap;
+	src: local('YapariTrial-ExtLtExt'), url('YapariTrial-ExtLtExt.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Light';
+	font-weight: 300;
+	font-display: swap;
+	src: local('YapariTrial-Light'), url('YapariTrial-Light.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-LightExpanded';
+	font-weight: 300;
+	font-display: swap;
+	src: local('YapariTrial-LightExpanded'), url('YapariTrial-LightExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-LightExtended';
+	font-weight: 300;
+	font-display: swap;
+	src: local('YapariTrial-LightExtended'), url('YapariTrial-LightExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-LightWide';
+	font-weight: 300;
+	font-display: swap;
+	src: local('YapariTrial-LightWide'), url('YapariTrial-LightWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Regular';
+	font-weight: 400;
+	font-display: swap;
+	src: local('YapariTrial-Regular'), url('YapariTrial-Regular.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Expanded';
+	font-weight: 400;
+	font-display: swap;
+	src: local('YapariTrial-Expanded'), url('YapariTrial-Expanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Extended';
+	font-weight: 400;
+	font-display: swap;
+	src: local('YapariTrial-Extended'), url('YapariTrial-Extended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Wide';
+	font-weight: 400;
+	font-display: swap;
+	src: local('YapariTrial-Wide'), url('YapariTrial-Wide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Medium';
+	font-weight: 500;
+	font-display: swap;
+	src: local('YapariTrial-Medium'), url('YapariTrial-Medium.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-MediumExpanded';
+	font-weight: 500;
+	font-display: swap;
+	src: local('YapariTrial-MediumExpanded'), url('YapariTrial-MediumExpanded.ttf');
+}@font-face {
+	font-family: 'YapariTrial-MediumExtended';
+	font-weight: 500;
+	font-display: swap;
+	src: local('YapariTrial-MediumExtended'), url('YapariTrial-MediumExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-MediumWide';
+	font-weight: 500;
+	font-display: swap;
+	src: local('YapariTrial-MediumWide'), url('YapariTrial-MediumWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-SemiBold';
+	font-weight: 600;
+	font-display: swap;
+	src: local('YapariTrial-SemiBold'), url('YapariTrial-SemiBold.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-SemiBoldExpanded';
+	font-weight: 600;
+	font-display: swap;
+	src: local('YapariTrial-SemiBoldExpanded'), url('YapariTrial-SemiBoldExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-SemiBoldExtended';
+	font-weight: 600;
+	font-display: swap;
+	src: local('YapariTrial-SemiBoldExtended'), url('YapariTrial-SemiBoldExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-SemiBoldWide';
+	font-weight: 600;
+	font-display: swap;
+	src: local('YapariTrial-SemiBoldWide'), url('YapariTrial-SemiBoldWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Bold';
+	font-weight: 700;
+	font-display: swap;
+	src: local('YapariTria-Boldl'), url('YapariTrial-Bold.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-BoldExpanded';
+	font-weight: 700;
+	font-display: swap;
+	src: local('YapariTrial-BoldExpanded'), url('YapariTrial-BoldExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-BoldExtended';
+	font-weight: 700;
+	font-display: swap;
+	src: local('YapariTrial-BoldExtended'), url('YapariTrial-BoldExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-BoldWide';
+	font-weight: 700;
+	font-display: swap;
+	src: local('YapariTrial-BoldWide'), url('YapariTrial-BoldWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraBold';
+	font-weight: 800;
+	font-display: swap;
+	src: local('YapariTrial-ExtraBold'), url('YapariTrial-ExtraBold.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraBoldExpanded';
+	font-weight: 800;
+	font-display: swap;
+	src: local('YapariTrial-ExtraBoldExpanded'), url('YapariTrial-ExtraBoldExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraBoldExtended';
+	font-weight: 800;
+	font-display: swap;
+	src: local('YapariTrial-ExtraBoldExtended'), url('YapariTrial-ExtraBoldExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-ExtraBoldWide';
+	font-weight: 800;
+	font-display: swap;
+	src: local('YapariTrial-ExtraBoldWide'), url('YapariTrial-ExtraBoldWide.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-Ultra';
+	font-weight: 900;
+	font-display: swap;
+	src: local('YapariTrial-Ultra'), url('YapariTrial-Ultra.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-UltraExpanded';
+	font-weight: 900;
+	font-display: swap;
+	src: local('YapariTrial-UltraExpanded'), url('YapariTrial-UltraExpanded.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-UltraExtended';
+	font-weight: 900;
+	font-display: swap;
+	src: local('YapariTrial-UltraExtended'), url('YapariTrial-UltraExtended.ttf');
+}
+@font-face {
+	font-family: 'YapariTrial-UltraWide';
+	font-weight: 900;
+	font-display: swap;
+	src: local('YapariTrial-UltraWide'), url('YapariTrial-UltraWide.ttf');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
