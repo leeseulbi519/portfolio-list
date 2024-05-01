@@ -37,7 +37,7 @@ body{position: relative; background-color: #363636;}
             display: flex;
             @include box-size(100%, 100%);
             & img{
-                @include box-size(80px, auto);
+                @include box-size(70px, auto);
             }
         }
     }
@@ -59,7 +59,7 @@ body{position: relative; background-color: #363636;}
                     width: 100%;
                     padding: 0 25px;
                     & span{
-                        @include font(23px, 'seoleimCool', $maincolor);
+                        @include font(20px, 'seoleimCool', $maincolor);
                         line-height: 100px;
                     }
                 }
@@ -83,7 +83,7 @@ body{position: relative; background-color: #363636;}
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    @include box-size(25px, 25px);
+                    @include box-size(20px, 20px);
                 }
             }
             & .search-box{display: none;}
@@ -92,7 +92,7 @@ body{position: relative; background-color: #363636;}
             & .lang-btn{
                 & span{
                     padding: 0 10px;
-                    @include font(23px, 'seoleimCool', $maincolor);
+                    @include font(20px, 'seoleimCool', $maincolor);
                 }
                 // &.active{
                 //     height: max-content;
@@ -121,6 +121,19 @@ body{position: relative; background-color: #363636;}
 
 .swiper-container{
     @include box-size(100vw, 100vh);
+    position: relative;
+    &:before,
+    &:after{
+        content: "";
+        position: absolute;
+        top: 100px;
+        background: rgb(255 255 255 / 70%);
+        width: 2px;
+        height: 84.5%;
+        z-index: 2;
+    }
+    &:before{left: 20px;}
+    &:after{right: 20px;}
     & .swiper-btn-wrap {
         position: absolute;
         width: 146px;
@@ -261,7 +274,7 @@ body{position: relative; background-color: #363636;}
         & #logo{
             & a{
                 & img{
-                    @include box-size(65px, auto);
+                    @include box-size(60px, auto);
                 }
             }
         }
@@ -302,19 +315,6 @@ body{position: relative; background-color: #363636;}
             }
         }
     }
-    // #footer{
-    //     &.copy{
-    //         font-size: 14px;
-    //         }
-    //     & .sns{
-    //         &.sns-list{
-    //             @include box-size(25px, 25px);
-    //             &.img{
-    //                 @include box-size(100%, 100%);
-    //             }
-    //         }
-    //     }
-    // }
     #footer{
         & .copy{
             @include font(14px, 'seoleimCool', $maincolor);
@@ -331,8 +331,10 @@ body{position: relative; background-color: #363636;}
 @media screen and (max-width:767px){
     #header{
         padding: 0px 0px 0 20px;
-        @include box-size(100%, 65px);
+        @include box-size(100%, 75px);
         & #logo{
+            padding-right: 20px;
+            flex:0;
             & a{
                 & img{
                     @include box-size(50px, auto);
@@ -388,8 +390,9 @@ body{position: relative; background-color: #363636;}
                 transition: right .5s ease-in-out;
                 top: 0;
                 @include box-size(300px, 100vh);
-                background: rgba(0, 0, 255, 0.1098039216);
-                padding: 65px 0;
+                background: rgb(81 81 81 / 80%);
+                padding: 75px 0;
+                z-index: 1;
                 & .nav-item{
                     & a{
                         & span{
@@ -412,6 +415,10 @@ body{position: relative; background-color: #363636;}
         }
     }
     .swiper-container{
+        &:before,
+        &:after{
+            width: 0;
+        }
         & .swiper-btn-wrap {
             width: 80%;
             height: 2px;
@@ -420,27 +427,23 @@ body{position: relative; background-color: #363636;}
             bottom: 15%;
             & button,
             & .swiper-control{display: none;}
-            & .swiper-pagination-bullet {
-                width: 20%;
-                left: 0;
-                @for $i from 0 through 4 {
-                    &:nth-child(#{$i+1}) {
-                    left: #{$i*2} + 0%;
+            & .swiper-pagination{
+                @include box-size(100%, 2px);
+                background: rgb(255, 255, 255,0.2);
+                & .swiper-pagination-bullet {
+                    width: 20%;
+                    left: 0;
+                    @for $i from 0 through 4 {
+                        &:nth-child(#{$i+1}) {
+                        left: #{$i*2} + 0%;
+                        }
                     }
-                }
-                &.swiper-pagination-bullet-active{
-                    animation:mobullet 8s 1;
-                    @keyframes mobullet{
-                        0% {width:0};
-                        100%{width:20%};
-                    }
-                    &:after{
-                        position: absolute;
-                        content:'';
-                        background: rgba(255, 255, 255, 0.2);
-                        @include box-size(100%,100%);
-                        left: 0;
-                        top: 0;
+                    &.swiper-pagination-bullet-active{
+                        animation:mobullet 8s 1;
+                        @keyframes mobullet{
+                            0% {width:0};
+                            100%{width:20%};
+                        }
                     }
                 }
             }
