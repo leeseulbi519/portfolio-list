@@ -5,7 +5,7 @@ ul,ol,dl{list-style:none;}
 a{text-decoration:none;}
 img{margin:0; padding:0; vertical-align:top; text-align:left; border:0;}
 button:focus, a:focus, button, a {outline: none;}
-html, body{font-family:'GmarketSansMedium'; overflow-x:hidden; color: #363636;}
+html, body{font-family:'pretendardRegular'; overflow-x:hidden; color: #363636;}
 html.not-scroll, html.not-scroll body {overflow-y: hidden;}
 button {cursor: pointer; background-color: transparent; border: 0; width:100%; height:100%}
 #skip, .skip{position:absolute; text-indent: -9999px;}
@@ -19,40 +19,257 @@ $maincolor : #ffffff;
     font:$size $font-family;
     color:$color;
 }
-#wrap{width: 100vw; height: 100vw; position: relative;}
 
-@media screen and (min-width:1024px){
-    #header{
-        @include box-size(100%, 100px);
-        position: fixed;
+body{position: relative; background-color: #363636;}
+#wrap{overflow:hidden; position: relative;}
+#header{
+    @include box-size(100%, 100px);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0 20px;
+    z-index: 10;
+    & #logo{
         display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-        & #logo{
+        flex:1;
+        justify-content: center;
+        & a{
             display: flex;
-            flex:1;
+            @include box-size(100%, 100%);
+            & img{
+                @include box-size(80px, auto);
+            }
+        }
+    }
+    & #nav{
+        display: flex;
+        flex: 8;
+        justify-content: center;
+        & .mo-nav-btn{
+            width: 0;
+        }
+        & .nav-list{
+            display: flex;
             justify-content: center;
+            overflow: hidden;
+            & .nav-item{
+                & a{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 25px;
+                    & span{
+                        @include font(23px, 'seoleimCool', $maincolor);
+                        line-height: 100px;
+                    }
+                }
+            }
+        }
+    }
+    & .header-button{
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        & .search-wrap{
+            @include box-size(70px, 100%);
+            & .search-btn{
+                position: relative;
+                @include box-size(100%, 100%);
+                &:before{
+                    content: "";
+                    background: url(../icon/search.svg)no-repeat center;
+                    background-size: contain;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include box-size(25px, 25px);
+                }
+            }
+            & .search-box{display: none;}
+        }
+        & .lang-wrap{
+            & .lang-btn{
+                & span{
+                    padding: 0 10px;
+                    @include font(23px, 'seoleimCool', $maincolor);
+                }
+                // &.active{
+                //     height: max-content;
+                //     transform: translateY(100%);
+                // }
+                &.active ~.lang-list{
+                    display: block;
+                }
+            }
+            & .lang-list{
+                display: none;
+                position: absolute;
+                top: 70px;
+                transition: all .3s ease-in-out;
+                & .lang-item button {
+                    font-size: 23px;
+                    font-family: 'seoleimCool';
+                    color: #fff;
+                    padding: 5px 10px;
+                }
+            }
+        }
+    }
+
+}
+
+.swiper-container{
+    @include box-size(100vw, 100vh);
+    & .swiper-btn-wrap {
+        position: absolute;
+        width: 146px;
+        height: 60px;
+        left: 264px;
+        bottom: 30%;
+        z-index: 1;
+        & button{
+            @include box-size(30px,30px);
+            &:after{
+                content:'';
+            }
+            &.swiper-button-prev{
+                left: 0;
+                background-image: url(../icon/slick-main-prev.svg);
+                background-position: center center;
+                background-size: contain;
+            }
+            &.swiper-button-next{
+                right: 0;
+                background-image: url(../icon/slick-main-next.svg);
+                background-position: center center;
+                background-size: contain;
+            }
+        }
+        & .swiper-control{
+            width: 84px;
+            margin: 0 auto;
+            padding: 8px 10% 0 10%;
+            & span{
+                @include font(20px,'seoleimCool',$maincolor);
+                line-height: 30px;
+                &.current:after{
+                    content:'/';
+                    position:relative;
+                    margin: 0 5px 0 10px;
+                }
+            }
+        }
+        & .swiper-pagination-bullet {
+            width: 100%;
+            background: $maincolor;
+            border-radius: 0;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0 !important;
+            &.swiper-pagination-bullet-active{
+                animation:bullet 8s 1;
+                @keyframes bullet{
+                    0% {width:0};
+                    100%{width:100%};
+                }
+            }
+        }
+    }
+    & .swiper-slide{
+        @include box-size(100vw, 100vh);
+        & .thumb{
+            @include box-size(100vw, 100vh);
+            position: relative;
+            & a{
+                display: block;
+                @include box-size(100px, 100px);
+                border: 2px solid $maincolor;
+                border-radius: 50%;
+                background-image: url(../icon/play_btn.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        @for $i from 1 through 5 {
+            & .thumb#{$i} {
+                background-image : url(../img/thumb#{$i}.jpeg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+        & iframe{
+            @include box-size(100vw, 100vh);
+            display: none;
+        }
+    }
+}
+
+#footer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    @include box-size(100%, auto);
+    z-index: 1;
+    & .copy{
+        @include font(16px, 'seoleimCool', $maincolor);
+        }
+    & .sns{
+        display:flex;
+        & .sns-list{
             & a{
                 display: flex;
-                @include box-size(100%, 100%);
-            }& img{
-                @include box-size(100px, auto);
+                padding: 10px;
+            }
+        }
+    }
+    & .fnb{
+        display: flex;
+        justify-content: flex-end;
+        & .fnb-item{
+            padding: 0 5px;
+            & span{
+                color: $maincolor;
+            }
+        }
+    }
+}
+@media screen and (min-width:1300px){
+    #header{
+        & #nav{
+            padding: 0 5%;
+            & .nav-list{
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    #header{
+        & #logo{
+            & a{
+                & img{
+                    @include box-size(65px, auto);
+                }
             }
         }
         & #nav{
-            display: flex;
-            flex: 8;
-            justify-content: center;
             & .nav-list{
-                display: flex;
-                justify-content: center;
-                overflow: hidden;
                 & .nav-item{
                     & a{
-                        display: flex;
-                        justify-content: center;
-                        width: 100%;
-                        padding: 0 20px;
+                        padding: 0 17px;
                         & span{
                             @include font(17px, 'seoleimCool', $maincolor);
                             line-height: 100px;
@@ -62,40 +279,189 @@ $maincolor : #ffffff;
             }
         }
         & .header-button{
-            display: flex;
-            flex: 1;
-            justify-content: center;
             & .search-wrap{
                 @include box-size(50px, 100%);
                 & .search-btn{
-                    position: relative;
-                    width: 100%;
-                    height: 100px;
                     &:before{
-                        content: "";
-                        background: url(../icon/search.svg);
-                        background-size: contain;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 30px;
-                        height: 30px;
+                        @include box-size(20px, 20px);
                     }
                 }
-                & .search-box{display: none;}
             }
             & .lang-wrap{
                 & .lang-btn{
                     & span{
-                        line-height: 100px;
                         @include font(17px, 'seoleimCool', $maincolor);
                     }
                 }
-                & .lang-list{display: none;}
+                & .lang-list{
+                    top: 65px;
+                    & .lang-item button {
+                        font-size: 17px;
+                    }
+                }
             }
         }
-
     }
-
+    // #footer{
+    //     &.copy{
+    //         font-size: 14px;
+    //         }
+    //     & .sns{
+    //         &.sns-list{
+    //             @include box-size(25px, 25px);
+    //             &.img{
+    //                 @include box-size(100%, 100%);
+    //             }
+    //         }
+    //     }
+    // }
+    #footer{
+        & .copy{
+            @include font(14px, 'seoleimCool', $maincolor);
+            }
+        & .fnb{
+            & .fnb-item{
+                & span{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:767px){
+    #header{
+        padding: 0px 0px 0 20px;
+        @include box-size(100%, 65px);
+        & #logo{
+            & a{
+                & img{
+                    @include box-size(50px, auto);
+                }
+            }
+        }
+        & #nav{
+            order: 2;
+            display: block;
+            flex: none;
+            position: relative;
+            & .mo-nav-btn{
+                @include box-size(64px, 50px);
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                & span{
+                    position: absolute;
+                    @include box-size(24px, 1px);
+                    background-color: $maincolor;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: top .2s ease-in-out;
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{$i}) {
+                            top : 10px * $i+5px
+                        }
+                    }
+                }
+                &.active span:not(:nth-child(2)){
+                    top: 50%;
+                    left: 18px;
+                    width: 30px;
+                }
+                &.active span:nth-child(1){
+                    transform: rotate(45deg) translateY(-50%);
+                }
+                &.active span:nth-child(2){
+                    opacity: 0;
+                }
+                &.active span:nth-child(3){
+                    transform: rotate(-45deg) translateY(-50%);
+                }
+                &.active ~.nav-list{
+                    right: 0;
+                }
+            }
+            & .nav-list{
+                display: block;
+                position: absolute;
+                right: -500%;
+                transition: right .5s ease-in-out;
+                top: 0;
+                @include box-size(300px, 100vh);
+                background: rgba(0, 0, 255, 0.1098039216);
+                padding: 65px 0;
+                & .nav-item{
+                    & a{
+                        & span{
+                            @include font(17px, 'seoleimCool', $maincolor);
+                            line-height: 80px;
+                        }
+                    }
+                }
+            }
+        }
+        & .header-button{
+            & .lang-wrap{
+                & .lang-list{
+                    top: 45px;
+                    & .lang-item button {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+    .swiper-container{
+        & .swiper-btn-wrap {
+            width: 80%;
+            height: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15%;
+            & button,
+            & .swiper-control{display: none;}
+            & .swiper-pagination-bullet {
+                width: 20%;
+                left: 0;
+                @for $i from 0 through 4 {
+                    &:nth-child(#{$i+1}) {
+                    left: #{$i*2} + 0%;
+                    }
+                }
+                &.swiper-pagination-bullet-active{
+                    animation:mobullet 8s 1;
+                    @keyframes mobullet{
+                        0% {width:0};
+                        100%{width:20%};
+                    }
+                    &:after{
+                        position: absolute;
+                        content:'';
+                        background: rgba(255, 255, 255, 0.2);
+                        @include box-size(100%,100%);
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+    #footer{
+        flex-direction: column-reverse;
+        padding: 2% 0;
+        & .copy{
+            font-size: 12px;
+            }
+        & .sns img{
+            width: 25px;
+            height: 25px;
+        }
+        & .fnb{
+            & .fnb-item{
+                & span{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
