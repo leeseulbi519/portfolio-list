@@ -50,7 +50,7 @@ button {
 
 body {
   position: relative;
-  background-color: #363636;
+  background-color: #000;
 }
 
 #wrap {
@@ -132,25 +132,39 @@ body {
 }
 #header .header-button .search-wrap .search-box {
   display: none;
+  position: absolute;
+  top: 100px;
+  width: 200px;
+  height: 40px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+}
+#header .header-button .search-wrap .search-box input[type=search] {
+  border: 0;
+  background: transparent;
+  font-family: "seoleimCool";
+  text-indent: 20px;
+  height: 40px;
+  outline: none;
+}
+#header .header-button .search-wrap .search-box .search-submit {
+  background: transparent;
+  border: 0;
 }
 #header .header-button .lang-wrap .lang-btn span {
   padding: 0 10px;
   font: 20px "seoleimCool";
   color: #ffffff;
 }
-#header .header-button .lang-wrap .lang-btn.active ~ .lang-list {
-  display: block;
-}
 #header .header-button .lang-wrap .lang-list {
   display: none;
   position: absolute;
   top: 70px;
-  transition: all 0.3s ease-in-out;
 }
 #header .header-button .lang-wrap .lang-list .lang-item button {
-  font-size: 23px;
-  font-family: "seoleimCool";
-  color: #fff;
+  font: 20px "seoleimCool";
+  color: #ffffff;
   padding: 5px 10px;
 }
 
@@ -178,7 +192,7 @@ body {
   position: absolute;
   width: 146px;
   height: 60px;
-  left: 264px;
+  left: 18%;
   bottom: 30%;
   z-index: 1;
 }
@@ -246,6 +260,9 @@ body {
   height: 100vh;
   position: relative;
 }
+.swiper-container .swiper-slide .thumb.stop {
+  display: none;
+}
 .swiper-container .swiper-slide .thumb a {
   display: block;
   width: 100px;
@@ -294,7 +311,7 @@ body {
 .swiper-container .swiper-slide iframe {
   width: 100vw;
   height: 100vh;
-  display: none;
+  padding: 100px 20px 52px 20px;
 }
 
 #footer {
@@ -405,6 +422,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
   }
   #header #nav .mo-nav-btn span {
     position: absolute;
@@ -469,12 +487,11 @@ body {
   }
   .swiper-container .swiper-btn-wrap {
     width: 80%;
-    height: 2px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 15%;
   }
-  .swiper-container .swiper-btn-wrap button, .swiper-container .swiper-btn-wrap .swiper-control {
+  .swiper-container .swiper-btn-wrap .swiper-control {
     display: none;
   }
   .swiper-container .swiper-btn-wrap .swiper-pagination {
@@ -511,6 +528,11 @@ body {
     100% {
       width: 20%;
     }
+  }
+  .swiper-container .swiper-slide iframe {
+    width: 100vw;
+    height: 75vh;
+    padding: 130px 20px 0px 20px;
   }
   #footer {
     flex-direction: column-reverse;
